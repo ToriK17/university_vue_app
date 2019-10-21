@@ -1,5 +1,5 @@
 <template>
-  <div class="signup">
+  <div class="home">
     <div class="container">
       <form v-on:submit.prevent="submit()">
         <h1>Signup</h1>
