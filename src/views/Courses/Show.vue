@@ -4,6 +4,7 @@
       <p>{{ course.name }}</p>
       <p>{{ course.num }}</p>
       <p>{{ course.department }}</p>
+      
       <p>{{ course.posts}}</p>
       <router-link to="/test">Back to test for now</router-link> 
     </div>
