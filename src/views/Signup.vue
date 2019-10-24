@@ -7,8 +7,8 @@
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
         <div class="form-group">
-          <label>Name:</label> 
-          <input type="text" class="form-control" v-model="name">
+          <label>Username:</label> 
+          <input type="text" class="form-control" v-model="user_name">
         </div>
         <div class="form-group">
           <label>Email:</label>
@@ -34,17 +34,17 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      name: "",
+      user_name: "",
       email: "",
       password: "",
       passwordConfirmation: "",
       errors: []
     };
-  },
+  },  
   methods: {
     submit: function() {
       var params = {
-        name: this.name,
+        user_name: this.user_name,
         email: this.email,
         password: this.password,
         password_confirmation: this.passwordConfirmation
