@@ -5,7 +5,12 @@
       <p>{{ course.num }}</p>
       <p>{{ course.department }}</p>
       
-      <p>{{ course.posts}}</p>
+      <div v-for="post in course.posts">
+        <li>{{post.professor_name}}</li>
+        <li>{{post.user_info}}</li>
+        <li>{{post.post_resources}}</li>
+      </div>
+      
       <router-link to="/test">Back to test for now</router-link> 
     </div>
   </div>  
@@ -16,7 +21,8 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      courses: {}
+      courses: {},
+      post: ""
     };
   },
   created: function() {
