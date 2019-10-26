@@ -1,17 +1,18 @@
 <template>
   <div class="courses-show">
     <div class="container">
-      <p>{{ course.name }}</p>
-      <p>{{ course.num }}</p>
-      <p>{{ course.department }}</p>
-      
-      <div v-for="post in course.posts">
-        <li>{{post.professor_name}}</li>
-        <li>{{post.user_info}}</li>
-        <li>{{post.post_resources}}</li>
+      <div>
+        <p>{{ course.name }}</p>
+        <p>{{ course.num }}</p>
+        <p>{{ course.department }}</p>
       </div>
-      
-      <router-link to="/test">Back to test for now</router-link> 
+      <div v-for="post in course.posts">
+        <p>{{post.professor_name}}</p>
+        <p>{{post.user_info}}</p>
+        <div v-for="resource in post.post_resources">
+          <p>{{resource.name}}</p>
+        </div>
+      </div>
     </div>
   </div>  
 </template>
@@ -21,8 +22,10 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      courses: {},
-      post: ""
+      course: {},
+      post: "", 
+      post_resources: "",
+      resource: ""
     };
   },
   created: function() {
