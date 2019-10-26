@@ -6,7 +6,9 @@
         <p>Course Name: {{ course.name }}</p>
         <p>Department: {{ course.department }}</p>
         <p>Course Number: {{ course.num }}</p>
-        <p>Course Posts: {{course.posts}}</p>
+        <div>
+          <router-link v-bind:to="`/courses/${course.id}`">Posts for this Course</router-link> 
+        </div>
       </div>
     </div>
   </div>  
