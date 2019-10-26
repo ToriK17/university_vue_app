@@ -3,8 +3,10 @@
     <div class="container">
     <p>User Name: {{ user.user_name }}</p>
     <p>Email: {{ user.email }}</p>
+
     <p>Posts: {{ user.posts }}</p>
-    <router-link to="/test">Send to test for now</router-link>
+
+    <router-link to="/courses">Find some Nuggs</router-link>
     </div>
   </div>
 </template>
