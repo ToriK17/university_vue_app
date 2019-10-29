@@ -6,6 +6,14 @@
     <div v-for="post in user.posts">
       <p> {{ post.professor_name }}</p>
       <p> {{ post.details }}</p>
+      <p> {{ post.course_dept}}</p>
+      <p> {{ post.course_name}}</p>
+      <div v-for="resource in post.post_resources">
+        --------------------------
+        <p> {{ resource.name }}</p>
+        <p> {{ resource.details }}</p>
+      </div>
+
     </div>
     <router-link to="/courses">Find some Nuggs</router-link>
     </div>
