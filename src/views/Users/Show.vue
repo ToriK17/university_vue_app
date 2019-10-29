@@ -3,9 +3,10 @@
     <div class="container">
     <p>User Name: {{ user.user_name }}</p>
     <p>Email: {{ user.email }}</p>
-
-    <p>Posts: {{ user.posts }}</p>
-
+    <div v-for="post in user.posts">
+      <p> {{ post.professor_name }}</p>
+      <p> {{ post.details }}</p>
+    </div>
     <router-link to="/courses">Find some Nuggs</router-link>
     </div>
   </div>
