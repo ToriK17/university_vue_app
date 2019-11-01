@@ -5,7 +5,7 @@
       <p>Email: {{ user.email }}</p>
       <div>
         
-        <button>Edit User Information</button>
+        <router-link v-bind:to="`/users/${user.id}/edit`">Edit User Information</router-link>
       </div>
       <div v-for="post in user.posts">
         <p> {{ post.professor_name }}</p>
