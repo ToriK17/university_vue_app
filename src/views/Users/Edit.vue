@@ -36,11 +36,13 @@ export default {
         email: this.user.email
       };
       axios
-        .patch("/api/users/" + this.$route.params.id).then(
-          response => {
-            this.$router.push("api/users/" + response.data.id);
-          });
-          
+        .patch("/api/users/" + this.user.id, params)
+        .then(response => {
+          this.$router.push("/users/" + this.user.id);
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
+        });  
     }
   }
 };
