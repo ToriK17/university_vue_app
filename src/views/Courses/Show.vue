@@ -10,10 +10,14 @@
       <div><router-link to="/posts/new">New Post</router-link> </div>
       
       <div v-for="post in course.posts">
-        <p>{{post.professor_name}}</p>
         <p>{{post.user_info}}</p>
+        <p>{{post.professor_name}}</p>
+        <p>{{post.details}}</p>
+        <p>{{post.created_at}}</p>
+
         <div v-for="resource in post.post_resources">
           <p>{{resource.name}}</p>
+          <p>{{resource.details}}</p>
         </div>
       </div>
     </div>

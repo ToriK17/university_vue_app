@@ -10,6 +10,14 @@
         Details:
         <input type="text" v-model="newDetails" />
 
+        Stuff you have:
+        <span v-for="resource in resources">
+          <input type=“checkbox” v-bind:id="resource.name" v-bind:value="details"> 
+          <li><label for="checkbox">{{ resource.name }}</label></li> 
+        </span>
+         
+                       
+      
         <button v-on:click="createPost()">Create Post</button>
       </div>
     </div>
@@ -24,28 +32,37 @@ export default {
       post: {}, 
       newProfessor: "",
       newCourse: "" ,
-      newDetails: "" 
+      newDetails: "",
+      post_resources: {}, 
+      resources: [], 
+      checked: false, 
+      details: ""
     };
   },
   created: function() {
-    axios.get("/api/posts/" + this.$route.params.id).then(response => {
-      this.post = response.data;
+    axios.get("/api/resources").then(response => {
+      this.resources = response.data;
+      console.log(this.resources);
     });
   },
   methods: {
     createPost: function() {
       var params = {
-        Professor: this.newProfessor,
-        Course: this.newCourse,
-        Details: this.newDetails
+        professor: this.newProfessor,
+        course: this.newCourse,
+        details: this.newDetails
       };
       axios.post("/api/posts", params).then(response => {
-        this.posts.push(response.data);
-        this.newProfessor = "";
-        this.newCourse = "";
-        this.newDetails = "";
+        console.log("success", response.data);
+        this.$router.push("/posts/" + response.data.id ); 
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+        console.log(error.response.data.errors);
       });
-    }
-  }
+    },
+  //   isChecked: function(checked) {
+  //     if checked == 
+  //   }   
+  }  
 };
 </script>

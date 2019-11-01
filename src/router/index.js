@@ -3,14 +3,15 @@ import VueRouter from 'vue-router';
 import Signup from '../views/Signup.vue';
 import Login from '../views/Login.vue';
 import Logout from '../views/Logout.vue';
-import UserShow from '../views/Users/Show.vue';
+import UsersShow from '../views/Users/Show.vue';
+import UsersEdit from '../views/Users/Edit.vue';
 import Test from '../views/Users/Test.vue';
 import PostsNew from '../views/Posts/New.vue';
 import PostsShow from '../views/Posts/Show.vue';
 import CoursesIndex from '../views/Courses/Index.vue';
 import CoursesShow from '../views/Courses/Show.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -31,8 +32,13 @@ const routes = [
   {
     path: '/users/:id', 
     name: 'users-show',
-    component: UserShow
+    component: UsersShow
   }, 
+  {
+    path: '/users/:id/edit',
+    name: 'users-edit',
+    component: UsersEdit
+  },
   {
     path:'/test', 
     name: 'users-test', 
@@ -58,12 +64,13 @@ const routes = [
     name: 'courses-show',
     component: CoursesShow
   }
-]
+
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;
