@@ -8,7 +8,7 @@
         </ul>
         <div class="form-group">
           <label>Username:</label> 
-          <input type="text" class="form-control" v-model="user_name">
+          <input type="text" class="form-control" v-model="userName">
         </div>
         <div class="form-group">
           <label>Profile Pic:</label> 
@@ -38,7 +38,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      user_name: "",
+      userName: "",
       image: "",
       email: "",
       password: "",
@@ -54,11 +54,11 @@ export default {
     },
     submit: function() {
       var formData = new FormData();
-      formData.append("user_name", this.user_name);
+      formData.append("user_name", this.userName);
       formData.append("image", this.image);
       formData.append("email", this.email);
       formData.append("password", this.password);
-      formData.append("password_confirmation", this.password_confirmation);
+      formData.append("password_confirmation", this.passwordConfirmation);
       
       axios
         .post("/api/users", formData)
