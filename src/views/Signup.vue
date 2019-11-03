@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container">
-      <form v-on:submit.prevent="submit()">
+      <form v-on:submit.prevent="submit()" enctype="multipart/form-data" >
         <h1>Signup</h1>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -9,6 +9,10 @@
         <div class="form-group">
           <label>Username:</label> 
           <input type="text" class="form-control" v-model="user_name">
+        </div>
+        <div class="form-group">
+          <label>Profile Pic:</label> 
+          <input type="file" class="form-control" v-on:change="setFile($event)" ref="fileInput">
         </div>
         <div class="form-group">
           <label>Email:</label>
@@ -35,6 +39,7 @@ export default {
   data: function() {
     return {
       user_name: "",
+      image: "",
       email: "",
       password: "",
       passwordConfirmation: "",
@@ -42,15 +47,21 @@ export default {
     };
   },  
   methods: {
+    setFile: function(event) {
+      if (event.target.files.length > 0) {
+        this.image = event.target.files[0];
+      }
+    },
     submit: function() {
-      var params = {
-        user_name: this.user_name,
-        email: this.email,
-        password: this.password,
-        password_confirmation: this.passwordConfirmation
-      };
+      var formData = new FormData();
+      formData.append("user_name", this.user_name);
+      formData.append("image", this.image);
+      formData.append("email", this.email);
+      formData.append("password", this.password);
+      formData.append("password_confirmation", this.password_confirmation);
+      
       axios
-        .post("/api/users", params)
+        .post("/api/users", formData)
         .then(response => {
           this.$router.push("/login");
         })
