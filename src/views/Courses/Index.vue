@@ -1,8 +1,11 @@
 <template>
   <div class="courses-index">
     <div class="container">
-      <h1>Find Your Course:</h1>
-      <div v-for="course in courses">
+      <h1>All Courses Below:</h1>
+      Search: <input type="text" v-model="courseFilter">   
+  
+
+      <div v-for="course in filterBy(courses, courseFilter)">
         <p>Course Name: {{ course.name }}</p>
         <p>Department: {{ course.department }}</p>
         <p>Course Number: {{ course.num }}</p>
@@ -16,10 +19,14 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
+
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
-      courses: []
+      courses: [], 
+      courseFilter: ""
     };
   },
   created: function() {

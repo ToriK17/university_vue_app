@@ -3,6 +3,8 @@
     <div class="container">
       <p>User Name: {{ user.user_name }}</p>
       <p>Email: {{ user.email }}</p>
+       <img :src="user.image" alt=""> 
+      
       <div>
         
         <router-link v-bind:to="`/users/${user.id}/edit`">Edit User Information</router-link>

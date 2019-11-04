@@ -3,10 +3,13 @@
 
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> | 
+      <router-link v-if="!isLoggedIn()" to="/signup">Signup</router-link> | 
+      <router-link v-if="isLoggedIn()" v-bind:to="'/users/' + userId()" >Profile</router-link> |
       <router-link v-if="!isLoggedIn()" to="/login">Login</router-link> |
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> | 
-      <router-link to="/courses">Find your class </router-link>
+      <router-link to="/courses">Find your class </router-link> |
+      
+
     </div>
     
     <router-view/>
@@ -38,6 +41,9 @@ export default {
       } else {
         return false;
       }
+    },
+    userId: function() {
+      return localStorage.getItem("user_id");
     }
   }
 };

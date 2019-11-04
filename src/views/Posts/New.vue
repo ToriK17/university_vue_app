@@ -4,20 +4,27 @@
     <h1>New Post</h1>
       <div>
         Professor:
-        <input type="text" v-model="newProfessor" />
+        <input type="text" v-model="newProfessorName" />
         Course:
-        <input type="text" v-model="newCourse" />
+        <input type="text" v-model="newCourseId" />
         Details:
         <input type="text" v-model="newDetails" />
 
-        Stuff you have:
-        <span v-for="resource in resources">
-          <input type=“checkbox” v-bind:id="resource.name" v-bind:value="details"> 
-          <li><label for="checkbox">{{ resource.name }}</label></li> 
-        </span>
-         
-                       
-      
+        
+
+        <!-- Inline Checkboxes -->
+        <h4 > Choose Resources</h4>
+        <div v-for="resource in resources">
+           <label >
+             <input type="checkbox" v-bind:id="resource.id" v-bind:value="resource" v-model="postResources">
+            
+             {{resource.name}}
+           </label>
+           <input type="text" v-model="resource.details">
+        </div>         
+            <!-- {{postResources}} see array -->
+     
+
         <button v-on:click="createPost()">Create Post</button>
       </div>
     </div>
@@ -30,13 +37,12 @@ export default {
   data: function() {
     return {
       post: {}, 
-      newProfessor: "",
-      newCourse: "" ,
+      newProfessorName: "",
+      newCourseId: "" ,
       newDetails: "",
-      post_resources: {}, 
-      resources: [], 
-      checked: false, 
-      details: ""
+      resources: [],  
+      postResources: []
+
     };
   },
   created: function() {
@@ -48,9 +54,10 @@ export default {
   methods: {
     createPost: function() {
       var params = {
-        professor: this.newProfessor,
-        course: this.newCourse,
-        details: this.newDetails
+        professor_name: this.newProfessorName,
+        course_id: this.newCourseId,
+        details: this.newDetails, 
+        post_resources: this.postResources
       };
       axios.post("/api/posts", params).then(response => {
         console.log("success", response.data);
@@ -59,10 +66,7 @@ export default {
         this.errors = error.response.data.errors;
         console.log(error.response.data.errors);
       });
-    },
-  //   isChecked: function(checked) {
-  //     if checked == 
-  //   }   
+    },  
   }  
 };
 </script>
