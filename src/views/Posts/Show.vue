@@ -4,10 +4,13 @@
       <p>{{ post.course_name }}</p>
       <p>{{ post.professor_name }}</p>
       <p>{{ post.details }}</p>
-      <div v-for="resource in post.resources">
+      <p v-for="resource in post.post_resources">
         {{resource.name}}
-        {{resource.details}} 
-      </div>
+        {{resource.details}}
+      </p>
+        
+        <!-- {{post.post_resources}} -->
+      
     </div>
 
     <div >
@@ -29,10 +32,9 @@
            <input type="text" v-model="resource.details">
         </div>         
         <button v-on:click="updatePost()">Update Post</button> <br><br>
-        post_resources {{post.post_resources}} <br>
-        <br>
+        <!-- post_resources {{post.post_resources}} -->
         
-        resources {{resources}}
+        <!-- resources {{resources}} -->
     </div>
   </div>  
 </template>
