@@ -4,10 +4,10 @@
       <p>User Name: {{ user.user_name }}</p>
       <p>Email: {{ user.email }}</p>
        <img :src="user.image" alt=""> 
-      
       <div>
         
         <router-link v-bind:to="`/users/${user.id}/edit`">Edit User Information</router-link>
+
       </div>
       <div v-for="post in user.posts">
         <p> {{ post.professor_name }}</p>
@@ -19,7 +19,7 @@
             <p> {{ resource.name }}</p>
             <p> {{ resource.details }}</p>
           </div>
-
+      <router-link v-bind:to="`/posts/${post.id}`">Show Full Post</router-link>
       </div>
     <router-link to="/courses">Find some Nuggs</router-link>
     </div>

@@ -1,11 +1,38 @@
 <template>
   <div class="posts-show">
     <div class="container">
-      <h2>{{ post.course_name }}</h2>
+      <p>{{ post.course_name }}</p>
       <p>{{ post.professor_name }}</p>
       <p>{{ post.details }}</p>
-      <p>{{ post.resources}}</p>
-      <router-link to="/test">Back to test for now</router-link> 
+      <div v-for="resource in post.resources">
+        {{resource.name}}
+        {{resource.details}} 
+      </div>
+    </div>
+
+    <div >
+      <h3>Edit Post</h3>
+        Professor:
+        <input type="text" v-model="post.professor_name" />
+        Course:
+        <input type="text" v-model="post.course_id" />
+        Details:
+        <input type="text" v-model="post.details" />
+      <!-- Inline Checkboxes -->
+        <h4 > Resources</h4>
+        
+        <div v-for="resource in resources" :key="resource.id">
+           <label >
+             <input type="checkbox" v-bind:id="resource.name" :value="resource" v-model="post.post_resources">
+             {{resource.name}}
+           </label>
+           <input type="text" v-model="resource.details">
+        </div>         
+        <button v-on:click="updatePost()">Update Post</button> <br><br>
+        post_resources {{post.post_resources}} <br>
+        <br>
+        
+        resources {{resources}}
     </div>
   </div>  
 </template>
@@ -15,14 +42,48 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      post: {}
+      post: {}, 
+      resources: [],
+      errors: []
     };
   },
   created: function() {
     axios.get("/api/posts/" + this.$route.params.id).then(response => {
       this.post = response.data;
+
+      console.log(this.post);
+      axios.get("/api/resources").then(response => {
+        this.resources = response.data;
+        console.log(this.resources);
+        this.resources.forEach(function(resource) {
+          this.post.post_resources.forEach(function(postResource) {
+            if (resource.id === postResource.id) {
+              resource.details = postResource.details;
+            }
+          }); 
+        }.bind(this));
+      });
     });
+   
   },
-  methods: {}
+  methods: {
+    updatePost: function() {
+      var params = {
+        professor_name: this.post.professor_name,
+        course_id: this.post.course_id,
+        details: this.post.details, 
+        post_resources: this.post.post_resources 
+      };
+      axios
+        .patch("/api/posts/" + this.$route.params.id, params)
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
+          console.log(error.response.data.errors);
+        }); 
+    }
+  }
 };
 </script>

@@ -10,8 +10,6 @@
         Details:
         <input type="text" v-model="newDetails" />
 
-        
-
         <!-- Inline Checkboxes -->
         <h4 > Choose Resources</h4>
         <div v-for="resource in resources">
@@ -36,13 +34,13 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      post: {}, 
+      post: {},
+      resources: [],
+      postResources: [], 
       newProfessorName: "",
       newCourseId: "" ,
-      newDetails: "",
-      resources: [],  
-      postResources: []
-
+      newDetails: "",  
+      errors: []
     };
   },
   created: function() {
@@ -59,13 +57,15 @@ export default {
         details: this.newDetails, 
         post_resources: this.postResources
       };
-      axios.post("/api/posts", params).then(response => {
-        console.log("success", response.data);
-        this.$router.push("/posts/" + response.data.id ); 
-      }).catch(error => {
-        this.errors = error.response.data.errors;
-        console.log(error.response.data.errors);
-      });
+      axios
+        .post("/api/posts", params)
+        .then(response => {
+          console.log("success", response.data);
+          this.$router.push("/posts/" + response.data.id ); 
+        }).catch(error => {
+          this.errors = error.response.data.errors;
+          console.log(error.response.data.errors);
+        });
     },  
   }  
 };
