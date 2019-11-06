@@ -6,6 +6,8 @@
       <input type="text" v-model="user.user_name">
       <label>Email:</label>
       <input type="text" v-model="user.email">
+      <label>Password:</label>
+      <input type="text" v-model="user.password">
       <button type="submit" value="Submit">Submit</button>     
     </form>
   </div>
@@ -33,7 +35,8 @@ export default {
     submit: function() {
       var params = {
         user_name: this.user.user_name,
-        email: this.user.email
+        email: this.user.email, 
+        password:this.user.password, 
       };
       axios
         .patch("/api/users/" + this.user.id, params)

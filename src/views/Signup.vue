@@ -66,7 +66,6 @@ export default {
         .post("/api/users", formData)
         .then(response => {
           this.$router.push("/login/");
-          console.log(response.data);
         })
         .catch(error => {
           this.errors = error.response.data.errors;

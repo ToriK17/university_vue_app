@@ -6,7 +6,7 @@
         Professor:
         <input type="text" v-model="newProfessorName" />
         Course:
-        <input type="text" v-model="newCourseId" />
+         <!--  {{course_name}} -->
         Details:
         <input type="text" v-model="newDetails" />
 
@@ -31,15 +31,19 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 export default {
+  mixins: [Vue2Filters.mixin], 
   data: function() {
     return {
       post: {},
       resources: [],
       postResources: [], 
       newProfessorName: "",
-      newCourseId: "" ,
-      newDetails: "",  
+      newDetails: "", 
+      course_name: "", 
+      courses: [],
+      newCourseId: "",
       errors: []
     };
   },
@@ -48,6 +52,10 @@ export default {
       this.resources = response.data;
       console.log(this.resources);
     });
+    // axios.get("/api/courses/" + this.$route.params.id).then(response => {
+    //   this.course = response.data;
+    //   console.log(this.courses);
+    // });
   },
   methods: {
     createPost: function() {
