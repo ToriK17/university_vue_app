@@ -42,7 +42,9 @@ export default {
     return {
       post: {}, 
       resources: [],
-      errors: []
+      errors: [], 
+      user: {},
+      user_id: localStorage.getItem("user_id")
     };
   },
   created: function() {
@@ -87,7 +89,7 @@ export default {
         .delete("/api/posts/" + this.post.id)
         .then(response => {
           console.log("post removed", response.data);
-          this.$router.push("/");  
+          this.$router.push("/users/" + this.user_id);  
         }).catch(error => {
           this.errors = error.response.data.errors;
         });
