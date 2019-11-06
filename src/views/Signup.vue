@@ -44,9 +44,10 @@ export default {
       email: "",
       password: "",
       passwordConfirmation: "",
-      errors: []
+      errors: [],
+      user: {}
     };
-  },  
+  }, 
   methods: {
     setFile: function(event) {
       if (event.target.files.length > 0) {
@@ -64,10 +65,13 @@ export default {
       axios
         .post("/api/users", formData)
         .then(response => {
-          this.$router.push("/");
+          this.$router.push("/login/");
+          console.log(response.data);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
+          console.log(error.response.data.errors);
+
         });
     }
   }
