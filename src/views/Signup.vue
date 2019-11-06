@@ -64,7 +64,7 @@ export default {
       axios
         .post("/api/users", formData)
         .then(response => {
-          this.$router.push("/login");
+          this.$router.push("/");
         })
         .catch(error => {
           this.errors = error.response.data.errors;

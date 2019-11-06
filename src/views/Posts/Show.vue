@@ -8,8 +8,6 @@
         {{resource.name}}
         {{resource.details}}
       </p>
-        
-        <!-- {{post.post_resources}} -->
       
     </div>
 
@@ -31,10 +29,8 @@
            </label>
            <input type="text" v-model="resource.details">
         </div>         
-        <button v-on:click="updatePost()">Update Post</button> <br><br>
-        <!-- post_resources {{post.post_resources}} -->
-        
-        <!-- resources {{resources}} -->
+        <button v-on:click="updatePost()">Update Post</button> <br>
+        <button v-on:click="destroyPost()">Delete Post</button>
     </div>
   </div>  
 </template>
@@ -85,6 +81,16 @@ export default {
           this.errors = error.response.data.errors;
           console.log(error.response.data.errors);
         }); 
+    },
+    destroyPost: function(post) {
+      axios
+        .delete("/api/posts/" + this.post.id)
+        .then(response => {
+          console.log("post removed", response.data);
+          this.$router.push("/");  
+        }).catch(error => {
+          this.errors = error.response.data.errors;
+        });
     }
   }
 };
