@@ -7,7 +7,7 @@
         <p>{{ course.department }}</p>
       </div>
 
-      <div><router-link to="/posts/new">New Post</router-link> </div>
+      <div><router-link :to="`/courses/${course.id}/posts/new`">New Post</router-link> </div>
       
       <div v-for="post in course.posts">
         <p>{{post.user_info}}</p>

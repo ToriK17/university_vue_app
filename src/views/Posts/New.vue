@@ -6,7 +6,7 @@
         Professor:
         <input type="text" v-model="newProfessorName" />
         Course:
-         <!--  {{course_name}} -->
+         {{course.name}}
         Details:
         <input type="text" v-model="newDetails" />
 
@@ -42,8 +42,7 @@ export default {
       newProfessorName: "",
       newDetails: "", 
       course_name: "", 
-      courses: [],
-      newCourseId: "",
+      course: {},
       errors: []
     };
   },
@@ -52,16 +51,16 @@ export default {
       this.resources = response.data;
       console.log(this.resources);
     });
-    // axios.get("/api/courses/" + this.$route.params.id).then(response => {
-    //   this.course = response.data;
-    //   console.log(this.courses);
-    // });
+    axios.get("/api/courses/" + this.$route.params.id).then(response => {
+      this.course = response.data;
+      console.log(this.course);
+    });
   },
   methods: {
     createPost: function() {
       var params = {
         professor_name: this.newProfessorName,
-        course_id: this.newCourseId,
+        course_id: this.course.id,
         details: this.newDetails, 
         post_resources: this.postResources
       };

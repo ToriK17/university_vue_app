@@ -51,7 +51,7 @@ const routes = [
     component: Test
   }, 
   {
-    path: '/posts/new',
+    path: '/courses/:id/posts/new',
     name: 'posts-new',
     component: PostsNew
   }, 

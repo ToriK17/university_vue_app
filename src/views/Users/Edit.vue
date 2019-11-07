@@ -8,6 +8,10 @@
       <input type="text" v-model="user.email">
       <label>Password:</label>
       <input type="text" v-model="user.password">
+      <label>Password Confirmation :</label>
+      <input type="text" v-model="user.password_confirmation">
+      <label>Profile Pic:</label>
+      <input type="file" v-on:change="setFile($event)" ref="fileInput">
       <button type="submit" value="Submit">Submit</button>     
     </form>
   </div>
@@ -22,7 +26,8 @@ export default {
   data: function() {
     return {
       user: {}, 
-      errors: []
+      errors: [], 
+      image: ""
     };
   },
   created: function() {
@@ -32,14 +37,23 @@ export default {
     });
   },
   methods: {
+    setFile: function(event) {
+      if (event.target.files.length > 0) {
+        this.image = event.target.files[0];
+      }
+    },
     submit: function() {
-      var params = {
-        user_name: this.user.user_name,
-        email: this.user.email, 
-        password:this.user.password, 
-      };
+      var formData = new FormData();
+      formData.append("user_name", this.user.user_name);
+      formData.append("email", this.user.email);
+      formData.append("password", this.user.password);
+      formData.append("password_confirmation", this.user.password_confirmation);
+      if (this.image) {
+        formData.append("image", this.image);
+      }
+
       axios
-        .patch("/api/users/" + this.user.id, params)
+        .patch("/api/users/" + this.user.id, formData)
         .then(response => {
           this.$router.push("/users/" + this.user.id);
         })
