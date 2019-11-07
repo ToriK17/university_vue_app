@@ -2,6 +2,9 @@
   <div class="posts-new">
     <div class="container">
     <h1>New Post</h1>
+      <ul>
+        <li v-for="error in errors">{{ error }}</li>
+      </ul>
       <div>
         Professor:
         <input type="text" v-model="newProfessorName" />
@@ -71,6 +74,7 @@ export default {
           this.$router.push("/posts/" + response.data.id ); 
         }).catch(error => {
           this.errors = error.response.data.errors;
+          this.status = error.response.status;
           console.log(error.response.data.errors);
         });
     },  

@@ -1,6 +1,7 @@
 <template>
   <div class="users-edit">
     <form v-on:submit.prevent="submit()">
+      <li v-for="error in errors">{{ error }}</li>
       <h1>Edit User Information</h1>
       <label>Username:</label>
       <input type="text" v-model="user.user_name">

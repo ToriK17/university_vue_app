@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <div class="container">
-      
       <form v-on:submit.prevent="submit()"  >
         <h1>Signup</h1>
         <ul>
@@ -68,6 +67,7 @@ export default {
           this.$router.push("/login/");
         })
         .catch(error => {
+          this.status = error.response.status;
           this.errors = error.response.data.errors;
           console.log(error.response.data.errors);
 
