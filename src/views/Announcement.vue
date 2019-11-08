@@ -1,27 +1,20 @@
   <template>
     <div class="announcement">
-     <!--  <twitter>
-        <a class="twitter-timeline"
-          data-tweet-limit="5"
-          v-bind:href="'https://twitter.com/MIT?ref_src=twsrc%5Etfw'"></a>
-
-      </twitter> -->
-  
-      <twitter>
-        <a class="twitter-timeline" href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Etfw">Tweets by realDonaldTrump</a>
-      </twitter>
-
+      <template>
+        <twitter>
+          <a class="twitter-timeline" href="https://twitter.com/MIT?ref_src=twsrc%5Etfw">Tweets from your college</a>
+        </twitter>
+      </template>
     </div>
   </template>
 
 <script>
 import axios from "axios";
+import twitter from "vue-twitter";
 export default {
   data: function() {
     return {};
-  },
-
-  created: {}
+  }
   ,
   methods: {}
 };

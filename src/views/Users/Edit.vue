@@ -13,7 +13,8 @@
       <input type="text" v-model="user.password_confirmation">
       <label>Profile Pic:</label>
       <input type="file" v-on:change="setFile($event)" ref="fileInput">
-      <button type="submit" value="Submit">Submit</button>     
+      <button v-on:click="submit()">Submit</button> 
+      <button v-on:click="destroyUser()">Delete Profile</button>     
     </form>
   </div>
    
@@ -60,6 +61,19 @@ export default {
         })
         .catch(error => {
           this.errors = error.response.data.errors;
+        });  
+    },
+    destroyUser: function() {
+      
+      axios
+        .delete("/api/users/" + this.user.id)
+        .then(response => {
+          console.log("deleted user", response.data);
+          this.$router.push("/logout");
+        })
+        .catch(error => {
+          this.errors = error.response.data.errors;
+          console.log(error.response.data.errors);
         });  
     }
   }

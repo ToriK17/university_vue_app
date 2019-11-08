@@ -11,6 +11,7 @@ import PostsNew from '../views/Posts/New.vue';
 import PostsShow from '../views/Posts/Show.vue';
 import CoursesIndex from '../views/Courses/Index.vue';
 import CoursesShow from '../views/Courses/Show.vue';
+import Messages from '../views/Messages.vue';
 
 Vue.use(VueRouter);
 
@@ -69,6 +70,11 @@ const routes = [
     path: '/courses/:id',
     name: 'courses-show',
     component: CoursesShow
+  },
+  {
+    path: '/messages',
+    name: 'messages',
+    component: Messages 
   }
 
 ];
