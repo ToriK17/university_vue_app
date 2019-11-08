@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Announcement from '../views/Announcement.vue';
+import Announcements from '../views/Announcements.vue';
 import Signup from '../views/Signup.vue';
 import Login from '../views/Login.vue';
 import Logout from '../views/Logout.vue';
@@ -27,9 +27,9 @@ const routes = [
     component: Home
   }, 
   {
-    path: '/announcement',
-    name: 'announcement',
-    component: Announcement
+    path: '/announcements',
+    name: 'announcements',
+    component: Announcements
   }, 
   {
     path: '/login', 

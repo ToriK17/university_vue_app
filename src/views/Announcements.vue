@@ -1,5 +1,5 @@
   <template>
-    <div class="announcement">
+    <div class="announcements">
       <template>
         <twitter>
           <a class="twitter-timeline" href="https://twitter.com/MIT?ref_src=twsrc%5Etfw">Tweets from your college</a>
