@@ -8,7 +8,7 @@
       <router-link v-if="!isLoggedIn()" to="/login">Login</router-link> |
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link> | 
       <router-link to="/courses">Find your class </router-link> |
-      <router-link to="/announcement">School Announcements </router-link> |
+      <router-link to="/announcements">School Announcements </router-link> |
        <router-link v-if="isLoggedIn()" to="/messages">Messages </router-link> |
 
     </div>
