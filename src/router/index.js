@@ -11,7 +11,7 @@ import PostsNew from '../views/Posts/New.vue';
 import PostsShow from '../views/Posts/Show.vue';
 import CoursesIndex from '../views/Courses/Index.vue';
 import CoursesShow from '../views/Courses/Show.vue';
-import Messages from '../views/Messages.vue';
+import Conversations from '../views/Conversations.vue';
 
 Vue.use(VueRouter);
 
@@ -72,9 +72,9 @@ const routes = [
     component: CoursesShow
   },
   {
-    path: '/messages',
-    name: 'messages',
-    component: Messages 
+    path: '/conversations',
+    name: 'conversations',
+    component: Conversations 
   }
 
 ];
