@@ -3,12 +3,14 @@
    
    <h2>Your Messages</h2>
      
-  <div>
-    <h2>Messages</h2>
-    <div v-for="message in conversation.messages">
-      <p>{{ message.user.user_name }} : {{message.created_at }}</p>
+    <div>
+      <h2>Messages</h2>
+      <div v-for="conversation in conversations">
+        <router-link v-bind:to="'/conversations/' + conversation.id">
+        <p>{{ message.user.user_name }} : {{message.updated_at }}</p>
+        </router-link>
+      </div>
     </div>
-  </div>
   </div>
 </template>
 

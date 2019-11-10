@@ -14,6 +14,8 @@
         <p>{{ message.body }}</p>
       </div>
     </div>
+
+    <router-link to="/conversations">return to all messages</router-link> 
       
   </div>
 </template>
