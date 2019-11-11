@@ -8,7 +8,8 @@
         {{resource.name}}
         {{resource.details}}
       </p>
-      
+      <button v-on:click="createConversation()">Create Conversation</button>
+      {{errors}}
     </div>
 
     <div >
@@ -67,6 +68,18 @@ export default {
    
   },
   methods: {
+    createConversation: function() {
+      var params = {
+        recipient_id: this.post.user_id
+      };
+      axios.post("/api/conversations", params).then(response => {
+        console.log(response.data);
+        this.$router.push("/conversations/" + response.data.id); 
+      }).catch(error => {
+        this.errors = error.response.data.errors;
+        console.log(error.response.data.errors);
+      });
+    },
     updatePost: function() {
       var params = {
         professor_name: this.post.professor_name,
