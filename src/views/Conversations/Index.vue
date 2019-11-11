@@ -1,5 +1,5 @@
 <template>
- <div class="conversations">
+ <div class="conversations-index">
    
    <h2>Your Messages</h2>
      
@@ -7,7 +7,7 @@
       <h2>Messages</h2>
       <div v-for="conversation in conversations">
         <router-link v-bind:to="'/conversations/' + conversation.id">
-        <p>{{ message.user.user_name }} : {{message.updated_at }}</p>
+          {{conversation.user.user_name}} {{conversation.user.image}}
         </router-link>
       </div>
     </div>
@@ -21,40 +21,39 @@ import ActionCable from "actioncable";
 export default {
   data: function() {
     return {
-      messages: [],
-      NewMessageBody: "",
+      conversations: [],
       user: {}
     };
   },
   created: function() {
-    axios.get("/api/messages").then(response => {
-      this.messages = response.data;
+    axios.get("/api/conversations").then(response => {
+      this.conversations = response.data;
     });
-    var cable = ActionCable.createConsumer("ws://localhost:3000/cable");
-    cable.subscriptions.create("MessagesChannel", {
-      connected: () => {
-        // Called when the subscription is ready for use on the server
-        console.log("Connected to MessagesChannel");
-      },
-      disconnected: () => {
-        // Called when the subscription has been terminated by the server
-      },
-      received: data => {
-        // Called when there's incoming data on the websocket for this channel
-        console.log("Data from MessagesChannel:", data);
-        this.messages.push(data); // update the messages in real time
-      }
-    });
+    // var cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+    // cable.subscriptions.create("MessagesChannel", {
+    //   connected: () => {
+    //     // Called when the subscription is ready for use on the server
+    //     console.log("Connected to MessagesChannel");
+    //   },
+    //   disconnected: () => {
+    //     // Called when the subscription has been terminated by the server
+    //   },
+    //   received: data => {
+    //     // Called when there's incoming data on the websocket for this channel
+    //     console.log("Data from MessagesChannel:", data);
+    //     this.messages.push(data); // update the messages in real time
+    //   }
+    // });
   },
   methods: {
-    createMessage: function() {
-      var params = {
-        body: this.newMessageBody
-      };
-      axios.post("/api/messages", params).then(response => {
-        this.newMessageBody = "";
-      });      
-    }
+    // createMessage: function() {
+    //   var params = {
+    //     body: this.newMessageBody
+    //   };
+    //   axios.post("/api/messages", params).then(response => {
+    //     this.newMessageBody = "";
+    //   });      
+    // }
   }
 };
   

@@ -11,7 +11,8 @@ import PostsNew from '../views/Posts/New.vue';
 import PostsShow from '../views/Posts/Show.vue';
 import CoursesIndex from '../views/Courses/Index.vue';
 import CoursesShow from '../views/Courses/Show.vue';
-import Conversations from '../views/Conversations.vue';
+import ConversationsIndex from '../views/Conversations/Index.vue';
+import ConversationsShow from '../views/Conversations/Show.vue';
 
 Vue.use(VueRouter);
 
@@ -73,8 +74,13 @@ const routes = [
   },
   {
     path: '/conversations',
-    name: 'conversations',
-    component: Conversations 
+    name: 'conversations-index',
+    component: ConversationsIndex 
+  },
+  {
+    path: '/conversations/:id',
+    name: 'conversations-show',
+    component: ConversationsShow
   }
 
 ];

@@ -27,11 +27,8 @@ import ActionCable from "actioncable";
 export default {
   data: function() {
     return {
-      messages: [],
-      NewMessageBody: "",
-      sender: {},
-      recipient: {}, 
-      conversations: {},
+      newMessageBody: "",
+      conversation: {},
       errors: []
     };
   },
@@ -52,17 +49,19 @@ export default {
       received: data => {
         // Called when there's incoming data on the websocket for this channel
         console.log("Data from MessagesChannel:", data);
-        this.messages.push(data); // update the messages in real time
+        this.conversation.messages.push(data); // update the messages in real time
       }
     });
   },
   methods: {
     createMessage: function() {
       var params = {
-        body: this.newMessageBody
+        body: this.newMessageBody, 
+        conversation_id: this.conversation.id 
       };
       axios.post("/api/messages", params).then(response => {
         this.newMessageBody = "";
+        // this.conversation.messages.push(response.data);
       });      
     }
   }
