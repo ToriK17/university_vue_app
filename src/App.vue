@@ -1,12 +1,12 @@
 <template>
   <div id="app">
      <!-- Header -->
-    <header id="js-header" class="u-header u-header--static">
-      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-        <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+    <header id="js-header" class="u-header u-header--static--lg u-header--show-hide--lg u-header--change-appearance--lg" data-header-fix-moment="500" data-header-fix-effect="slide">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10" data-header-fix-moment-exclude="g-bg-white g-py-10" data-header-fix-moment-classes="g-bg-white-opacity-0_7 u-shadow-v18 g-py-0">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
           <div class="container">
             <!-- Responsive Toggle Button -->
-            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-minus-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
               <span class="hamburger hamburger--slider">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
@@ -16,7 +16,7 @@
             <!-- End Responsive Toggle Button -->
 
             <!-- Logo -->
-            <router-link to="/" class="navbar-brand d-flex">
+            <router-link to="/" class="navbar-brand">
               <svg width="86px" height="32px" viewBox="0 0 86 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                   <g transform="translate(-78.000000, -19.000000)">
@@ -29,61 +29,66 @@
                 </g>
               </svg>
             </router-link>
+
+            <!-- <router-link to="/" class="navbar-brand">
+              <img src="https://i.pinimg.com/originals/a4/11/17/a411171c60c9ae6b4465e019e9812178.jpg" alt="Image Description">
+            </router-link> -->
+            <!-- need to make this mini so it fits in the nav bar -->
             <!-- End Logo -->
 
             <!-- Navigation -->
-            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+              <ul class="navbar-nav ml-auto text-uppercase g-font-weight-600 u-main-nav-v2 u-sub-menu-v2">
                 <!-- Home -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link to="/" class="nav-link g-py-7 g-px-0">Home</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link to="/" class="nav-link">Home</router-link>
                 </li>
                 <!-- End Home -->
 
                  <!-- Signup -->
                  <!-- need to add v-if="!isLoggedIn()" -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link  to="/signup" class="nav-link g-py-7 g-px-0">SignUp</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link v-if="!isLoggedIn()" to="/signup" class="nav-link">SignUp</router-link>
                 </li>
                 <!-- End Signup -->
 
                 <!-- Login -->
                 <!-- need to add v-if="!isLoggedIn()"  -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link to="/login" class="nav-link g-py-7 g-px-0">Login</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link v-if="!isLoggedIn()"  to="/login" class="nav-link">Login</router-link>
                 </li>
                 <!-- End Login -->
 
                 <!-- Logout -->
                 <!-- need to add v-if="isLoggedIn()" -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link to="/logout" class="nav-link g-py-7 g-px-0">Logout</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link v-if="isLoggedIn()" to="/logout" class="nav-link">Logout</router-link>
                 </li>
                 <!-- End Logout -->
 
                 <!-- Find a Class -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link to="/courses" class="nav-link g-py-7 g-px-0">Find a Class</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link to="/courses" class="nav-link">Find a Class</router-link>
                 </li>
                 <!-- End Find a Class -->
 
                 <!-- Profile -->
                 <!-- add v-if="isLoggedIn()" -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link v-bind:to="'/users/' + userId()" class="nav-link g-py-7 g-px-0">Profile</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link v-if="isLoggedIn()" v-bind:to="'/users/' + userId()" class="nav-link">Profile</router-link>
                 </li>
                 <!-- End Profile -->
 
                 <!-- Messages -->
                 <!-- add v-if="isLoggedIn()" -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link to="/" class="nav-link g-py-7 g-px-0">Messages</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link v-if="isLoggedIn()" to="/" class="nav-link">Messages</router-link>
                 </li>
                 <!-- End Messages -->
 
                 <!-- Campus Updates -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <router-link to="/announcements" class="nav-link g-py-7 g-px-0">Campus Updates</router-link>
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <router-link to="/announcements" class="nav-link">Campus Updates</router-link>
                 </li>
                 <!-- End Campus Updates -->
 
@@ -126,8 +131,8 @@
             <a class="d-block g-mb-20" href="index.html">
               <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHYwJDuBcl1PwcC7T77y9ubeO5rG2UQXQQEM2ajlqxBt27M0M7&s" alt="Logo">
             </a>
-            <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
-            <p class="mb-0">Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
+            <p>If you love Knugget and those tasty nuggz, share the wealth and let your fellow classmates know!</p>
+            <p class="mb-0">Mmmmmmm . . . Knuggety Nuggz!</p>
           </div>
           <!-- End Footer Content -->
 
@@ -214,7 +219,7 @@
               <h2 class="u-heading-v3__title h6 text-uppercase g-brd-primary">Our Contact Info</h2>
             </div>
 
-            <address class="g-bg-no-repeat g-line-height-2 g-mt-minus-4" style="background-image: url(../../assets/img/maps/map2.png);">
+            <address class="g-bg-no-repeat g-line-height-2 g-mt-minus-4" style="background-image: url();">
                 25, Lorem Lis Street, Orange
                 <br> Nevada, US
                 <br> Phone: 800 123 3456

@@ -1,7 +1,7 @@
 <template>
   <div class="courses-index">
     <div class="container">
-      <h1>All Courses Below:</h1>
+      <h1>Courses for University Of Nevada, Las Vegas </h1>
       Search: <input type="text" v-model="courseFilter">   
   
 
