@@ -29,13 +29,16 @@ export default {
     return {
       messages: [],
       NewMessageBody: "",
-      user: {}, 
-      conversations: []
+      sender: {},
+      recipient: {}, 
+      conversations: {},
+      errors: []
     };
   },
   created: function() {
     axios.get("/api/conversations/" + this.$route.params.id).then(response => {
       this.conversation = response.data;
+      console.log(response.data);
     });
     var cable = ActionCable.createConsumer("ws://localhost:3000/cable");
     cable.subscriptions.create("MessagesChannel", {
