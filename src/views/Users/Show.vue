@@ -1,6 +1,15 @@
 <template>
   <div class="users-show">
     <div class="container">
+      
+
+
+
+
+
+
+
+
       <p>User Name: {{ user.user_name }}</p>
       <p>Email: {{ user.email }}</p>
        <img :src="user.image" alt=""> 
