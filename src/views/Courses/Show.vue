@@ -3,7 +3,7 @@
 
     <section class="dzsparallaxer auto-init height-is-based-on-content use-loading" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
       <!-- Parallax Image -->
-      <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-white-gradient-opacity-v3--after" style="height: 140%; background-image: url();"></div>
+      <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-white-gradient-opacity-v3--after" style="height: 140%; background-image: url(https://t4.ftcdn.net/jpg/02/81/54/15/240_F_281541598_Hdo3t2JUv4xs9UcOcQVfdCXiONZ5HGuO.jpg);"></div>
       <!-- End Parallax Image -->
 
       <div class="container text-center g-py-100--md g-py-80">
@@ -22,10 +22,13 @@
                 </button>
               </div>
             </div>
-            <small class="form-text g-opacity-0_8 g-font-size-default">Get your hot nuggz here!</small>
+            <small class="form-text g-opacity-0_8 g-font-size-default"></small>
           </div>
         </form>
         <!-- End Search Form -->
+        <div>
+          <router-link :to="`/courses/${course.id}/posts/new`" class="btn btn-md u-btn-primary g-rounded-50 g-mr-10 g-mb-15">Post a Knugget</router-link>
+        </div>
       
           <div class="container" v-for="post in course.posts">  
             <article>
@@ -69,157 +72,13 @@
                   </li>
                 </ul>
                 <!-- End Search Info -->
-
+  
               </div>
             </article>
             <!-- End Search Result -->
 
             <hr class="g-brd-gray-light-v4 g-my-40">
 
-            <!-- Search Result -->
-            <article>
-              <header class="g-mb-15">
-                <h2 class="h4 g-mb-5">
-                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Stream - Bootstrap 4 UI Kit Freebie</a>
-                  </h2>
-                <span class="g-color-primary">https://htmlstream.com/freebies/Stream-Bootstrap-4-UI-Kit</span>
-              </header>
-
-              <p class="g-mb-15">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores. Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie
-                est volutpat at, sed viverra cursus nibh.</p>
-
-              <div class="d-lg-flex justify-content-between align-items-center">
-                <ul class="list-inline g-mb-10 g-mb-0--lg">
-                  <li class="list-inline-item g-mr-30">
-                    <img class="g-height-25 g-width-25 rounded-circle g-mr-5" src="/assets/img-temp/100x100/img1.jpg" alt="Image Description"> <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Htmlstream</a>
-                  </li>
-                  <li class="list-inline-item g-mr-30">
-                    <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 3 weeks ago
-                  </li>
-                  <li class="list-inline-item">
-                    <i class="icon-eye g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 178,273
-                  </li>
-                </ul>
-
-                <!-- Search Rating -->
-                <div>
-                  <span class="js-rating g-color-primary mr-2" data-rating="4"></span>
-                  <span class="g-color-gray-dark-v5">Relevance 4.0 out of 2029 votes</span>
-                </div>
-                <!-- End Search Rating -->
-              </div>
-            </article>
-            <!-- End Search Result -->
-
-            <hr class="g-brd-gray-light-v4 g-my-40">
-
-            <!-- Search Result -->
-            <article>
-              <header class="g-mb-15">
-                <h2 class="h4 g-mb-5">
-                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Admin UI Kit - Free PSD &amp; Sketch</a>
-                  </h2>
-                <span class="g-color-primary">https://htmlstream.com/freebies/Admin-UI-Kit</span>
-              </header>
-
-              <p class="g-mb-15">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores. Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie
-                est volutpat at, sed viverra cursus nibh.</p>
-
-              <div class="d-lg-flex justify-content-between align-items-center">
-                <ul class="list-inline g-mb-10 g-mb-0--lg">
-                  <li class="list-inline-item g-mr-30">
-                    <img class="g-height-25 g-width-25 rounded-circle g-mr-5" src="/assets/img-temp/100x100/img5.jpg" alt="Image Description"> <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Sally Manning</a>
-                  </li>
-                  <li class="list-inline-item g-mr-30">
-                    <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 4 weeks ago
-                  </li>
-                  <li class="list-inline-item">
-                    <i class="icon-eye g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 132,849
-                  </li>
-                </ul>
-
-                <!-- Search Rating -->
-                <div>
-                  <span class="js-rating g-color-primary mr-2" data-rating="4.5"></span>
-                  <span class="g-color-gray-dark-v5">Relevance 4.5 out of 1029 votes</span>
-                </div>
-                <!-- End Search Rating -->
-              </div>
-            </article>
-            <!-- End Search Result -->
-
-            <hr class="g-brd-gray-light-v4 g-my-40">
-
-            <!-- Search Result -->
-            <article>
-              <header class="g-mb-15">
-                <h2 class="h4 g-mb-5">
-                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Dribbble Mockups - PSD Freebies For Themes</a>
-                  </h2>
-                <span class="g-color-primary">https://example.com/freebies/Dribbble-UI-Kit</span>
-              </header>
-
-              <p class="g-mb-15">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores. Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie
-                est volutpat at, sed viverra cursus nibh.</p>
-
-              <div class="d-lg-flex justify-content-between align-items-center">
-                <ul class="list-inline g-mb-10 g-mb-0--lg">
-                  <li class="list-inline-item g-mr-30">
-                    <img class="g-height-25 g-width-25 rounded-circle g-mr-5" src="/assets/img-temp/100x100/img17.jpg" alt="Image Description"> <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">David Miller</a>
-                  </li>
-                  <li class="list-inline-item g-mr-30">
-                    <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 1 month ago
-                  </li>
-                  <li class="list-inline-item">
-                    <i class="icon-eye g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 201,032
-                  </li>
-                </ul>
-
-                <!-- Search Rating -->
-                <div>
-                  <span class="js-rating g-color-gray-light-v2 mr-2" data-rating="0"></span>
-                  <span class="g-color-gray-dark-v5">Unknown rating</span>
-                </div>
-                <!-- End Search Rating -->
-              </div>
-            </article>
-            <!-- End Search Result -->
-
-            <hr class="g-brd-gray-light-v4 g-my-40">
-
-            <!-- Search Result -->
-            <article>
-              <header class="g-mb-15">
-                <h2 class="h4 g-mb-5">
-                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Pixel UI Kit - Over 300 Sketch Layouts</a>
-                  </h2>
-                <span class="g-color-primary">https://pixeel.c.ukm/freebies/Pixel-UI-Kit</span>
-              </header>
-
-              <p class="g-mb-15">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores. Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie
-                est volutpat at, sed viverra cursus nibh.</p>
-
-              <div class="d-lg-flex justify-content-between align-items-center">
-                <ul class="list-inline g-mb-10 g-mb-0--lg">
-                  <li class="list-inline-item g-mr-30">
-                    <img class="g-height-25 g-width-25 rounded-circle g-mr-5" src="/assets/img-temp/100x100/img3.jpg" alt="Image Description"> <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Pixeel</a>
-                  </li>
-                  <li class="list-inline-item g-mr-30">
-                    <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 2 months ago
-                  </li>
-                  <li class="list-inline-item">
-                    <i class="icon-eye g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 442,371
-                  </li>
-                </ul>
-
-                <!-- Search Rating -->
-                <div>
-                  <span class="js-rating g-color-primary mr-2" data-rating="5"></span>
-                  <span class="g-color-gray-dark-v5">Relevance 5.0 out of 3849 votes</span>
-                </div>
-                <!-- End Search Rating -->
-              </div>
-            </article>
           </div>  
             <!-- End Search Result -->
 

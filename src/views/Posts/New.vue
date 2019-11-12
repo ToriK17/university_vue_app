@@ -1,6 +1,41 @@
 <template>
   <div class="posts-new">
-    <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</template>
+
+  <!--   <div class="container">
     <h1>New Post</h1>
       <ul>
         <li v-for="error in errors">{{ error }}</li>
@@ -11,10 +46,10 @@
         Course:
          {{course.name}}
         Details:
-        <input type="text" v-model="newDetails" />
+        <input type="text" v-model="newDetails" /> -->
 
         <!-- Inline Checkboxes -->
-        <h4 > Choose Resources</h4>
+       <!--  <h4 > Choose Resources</h4>
         <div v-for="resource in resources">
            <label >
              <input type="checkbox" v-bind:id="resource.id" v-bind:value="resource" v-model="postResources">
@@ -22,15 +57,14 @@
              {{resource.name}}
            </label>
            <input type="text" v-model="resource.details">
-        </div>         
+        </div>   -->       
             <!-- {{postResources}} see array -->
      
-
+<!-- 
         <button v-on:click="createPost()">Create Post</button>
       </div>
     </div>
-  </div>
-</template>
+   -->
 
 <script>
 import axios from "axios";
