@@ -1,35 +1,45 @@
 <template>
   <div class="courses-show">
-
-    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
-      <!-- Parallax Image -->
-      <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-white-gradient-opacity-v3--after" style="height: 140%; background-image: url(https://t4.ftcdn.net/jpg/02/81/54/15/240_F_281541598_Hdo3t2JUv4xs9UcOcQVfdCXiONZ5HGuO.jpg);"></div>
+  <!-- Page Title -->
+  <section class="dzsparallaxer auto-init height-is-based-on-content use-loading" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
+    <!-- Parallax Image -->
+    <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-white-gradient-opacity-v3--after" style="height: 140%; background-image: url(https://t4.ftcdn.net/jpg/02/87/65/73/240_F_287657319_omxv5vSbJnJADySC2wX7X8LUo409HnVw.jpg);"></div>
       <!-- End Parallax Image -->
 
-      <div class="container text-center g-py-100--md g-py-80">
-        <h2 class="h1 text-uppercase g-font-weight-300 g-mb-30">{{ course.name }} : {{ course.num }}</h2>
-        <h2 class="h1 text-uppercase g-font-weight-300 g-mb-30">{{course.department}}</h2>
+    <div class="container text-center g-py-100--md g-py-80">
+      <h2 class="h1 text-uppercase g-font-weight-300 g-mb-30">{{ course.name }} : {{ course.num }}</h2>
+      <h2 class="h1 text-uppercase g-font-weight-300 g-mb-30">{{course.department}}</h2>
 
-        <!-- Search Form -->
+      <!-- Search Form -->
 
-        <form class="g-width-60x--md mx-auto">
-          <div class="form-group g-mb-20">
-            <div class="input-group u-shadow-v21 rounded g-mb-15">
-              <input v-model="resourceFilter" class="form-control form-control-md g-brd-white g-font-size-16 border-right-0 pr-0 g-py-15" type="text" placeholder="Used Books?  Midterms?  Recorded Lectures?">
-              <div class="input-group-addon d-flex align-items-center g-bg-white g-brd-white g-color-gray-light-v1 g-pa-2">
-                <button class="btn u-btn-primary g-font-size-16 g-py-15 g-px-20" type="submit">
-                  <i class="icon-magnifier g-pos-rel g-top-1"></i>
-                </button>
-              </div>
+      <form class="g-width-60x--md mx-auto">
+        <div class="form-group g-mb-20">
+          <div class="input-group u-shadow-v21 rounded g-mb-15">
+            <input v-model="resourceFilter" class="form-control form-control-md g-brd-white g-font-size-16 border-right-0 pr-0 g-py-15" type="text" placeholder="Used Books?  Midterms?  Recorded Lectures?">
+            <div class="input-group-addon d-flex align-items-center g-bg-white g-brd-white g-color-gray-light-v1 g-pa-2">
+              <button class="btn u-btn-primary g-font-size-16 g-py-15 g-px-20" type="submit">
+                <i class="icon-magnifier g-pos-rel g-top-1"></i>
+              </button>
             </div>
-            <small class="form-text g-opacity-0_8 g-font-size-default"></small>
           </div>
-        </form>
-        <!-- End Search Form -->
-        <div>
-          <router-link :to="`/courses/${course.id}/posts/new`" class="btn btn-md u-btn-primary g-rounded-50 g-mr-10 g-mb-15">Post a Knugget</router-link>
+          <small class="form-text g-opacity-0_8 g-font-size-default"></small>
         </div>
-      
+      </form>
+      <!-- End Search Form -->
+    </div>
+  </section>
+
+  <section>
+    <div class="btn btn-med btn-block  g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 ">
+      <router-link :to="`/courses/${course.id}/posts/new`" class="btn u-btn-outline-black g-font-weight-600 g-font-size-13 text-uppercase g-py-10 g-px-15" target="_blank">Post a Knugget</router-link>
+    </div>
+  </section>   
+
+  <!-- <a > Block Level Button
+    <i class="fa fa-check-circle g-ml-3"></i>
+  </a> -->
+
+
           <div class="container" v-for="post in course.posts">  
             <article>
               <header class="g-mb-15">
@@ -65,10 +75,7 @@
                     <img class="g-height-25 g-width-25 rounded-circle g-mr-5" src="/assets/img-temp/100x100/img7.jpg" alt="Image Description"> <a class="u-link-v5 g-color-main g-color-primary--hover">{{post.user_info}}</a>
                   </li>
                   <li class="list-inline-item g-mr-30">
-                    <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> Posted: 2 weeks ago
-                  </li>
-                  <li class="list-inline-item g-mr-30">
-                    <i class="icon-eye g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 722,538
+                    <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> Posted: {{post.updated_at}}
                   </li>
                 </ul>
                 <!-- End Search Info -->
@@ -202,6 +209,7 @@ export default {
   created: function() {
     axios.get("/api/courses/" + this.$route.params.id).then(response => {
       this.course = response.data;
+      console.log(response.data);
     });
   },
   methods: {}

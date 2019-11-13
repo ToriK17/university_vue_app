@@ -16,9 +16,9 @@
             <!-- End Responsive Toggle Button -->
 
             <!-- Logo -->
-            <router-link to="/" class="navbar-brand">
+            <a href="/" class="navbar-brand">
               <img width="50px" height="50px" src="/assets/img/logo/orange_nugget.jpg"/>
-            </router-link>
+            </a>
             <!-- <li class="nav-logo-item g-mx-40--lg">
               <router-link to="/" class="navbar-brand">
                 <img src="/assets/orange_nugget.jpg" alt="Orange Nugget">
@@ -31,11 +31,6 @@
             <!-- Navigation -->
             <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
               <ul class="navbar-nav ml-auto text-uppercase g-font-weight-600 u-main-nav-v2 u-sub-menu-v2">
-                <!-- Home -->
-                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <router-link to="/" class="nav-link">Home</router-link>
-                </li>
-                <!-- End Home -->
 
                  <!-- Signup -->
                  <!-- need to add v-if="!isLoggedIn()" -->

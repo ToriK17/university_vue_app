@@ -1,5 +1,6 @@
 <template>
   <div class="posts-show">
+
     <div class="container">
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-50">
@@ -18,7 +19,7 @@
               </li>
               <!-- v-bind:to="`/courses/${course.id}`" -->
               <li class="list-inline-item g-color-primary">
-                <router-link class="u-link-v5 g-color-main g-color-primary--hover" >Back to all {{ post.course_name }} Knuggets</router-link>
+                <router-link class="u-link-v5 g-color-main g-color-primary--hover" :to="`/courses/${post.course_id}`">Back to all {{ post.course_name }} Knuggets</router-link>
               </li>
             </ul>
           </div>
@@ -59,21 +60,58 @@
               </div>
               <!-- User Image -->
 
-              <!-- User Edit Post Button -->
-              <a class="btn u-btn-primary" href="#modal2" data-modal-target="#modal2" data-modal-effect="slide">Edit
-                <div id="modal2" class="text-left g-max-width-600 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
-                  <button type="button" class="close" onclick="Custombox.modal.close();">
-                    <i class="hs-icon hs-icon-close"></i>
-                  </button>
-                  <h4 class="g-mb-20">Edit Knugget</h4>
-                  <p> 
-                  </p>
-                  
+              <!-- Button trigger modal -->
+              <button v-if="$parent.userId() == post.user_id" type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal">
+                Edit
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Form -->
+                      <form class="g-py-15">
+                        
+                        <div class="form-group row g-mb-25">
+                          <label for="example-text-input" class="col-2 col-form-label" >Professor</label>
+                            <div class="col-10">
+                              <input v-model="post.professor_name" class="form-control rounded-0 form-control-md" type="text" placeholder="enter professor name" id="example-text-input">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group g-mb-25">
+                          <label for="exampleTextarea">Optional Extra Details</label>
+                          <textarea v-model="post.details" class="form-control rounded-0 form-control-md" id="exampleTextarea" rows="6"></textarea>
+                        </div>
+
+                        <legend class="g-font-size-default">Select the Knuggs you have</legend>
+                        <div v-for="resource in resources" class="mb-3">
+                          <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-13 g-pl-25 mb-2">
+                            <input v-bind:id="resource.id" v-bind:value="resource" v-model="post.post_resources" class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0" type="checkbox">          
+                            {{resource.name}}
+                          </label>
+                          <div class="g-mb-20">
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 rounded g-py-15 g-px-15" type="text" placeholder="details" v-model="resource.details">
+                          </div>
+                        </div>
+
+                        <button v-on:click="updatePost()" class="btn btn-block u-btn-primary rounded g-py-13" type="button">Update Post</button>
+                      </form>
+                      <!-- End Form -->
+                      <button v-on:click="destroyPost()" class="btn btn-block u-btn-warning rounded g-py-13" type="button">Destroy Post</button>
+                    </div>
+                  </div>
                 </div>
-                  
-                
-              </a>
-              <!-- End User Edit Post Button -->
+              </div>
+
+
               
             </div>
 
@@ -320,6 +358,8 @@ export default {
         .patch("/api/posts/" + this.$route.params.id, params)
         .then(response => {
           console.log(response.data);
+          $('#editModal').modal('hide');
+
         })
         .catch(error => {
           this.errors = error.response.data.errors;
