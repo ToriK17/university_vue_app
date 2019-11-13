@@ -41,7 +41,7 @@
     <h2 class="h4 g-mb-5">
         <router-link class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :to="`/posts/${post.id}`">{{post.professor_name}} for {{post.course_name}}</router-link>
     </h2>
-    <span class="g-color-primary">https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream</span>
+    
   </header>
   <div>  
     <h4 class="h6 g-font-weight-700 g-mb-20">Listed Resources: </h4>
@@ -49,9 +49,9 @@
         <div class="form-check g-mb-10 g-px-0">
           <p v-for="resource in post.post_resources" class="g-mb-15">
             <label class="u-check g-pl-25">  
-              <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio" checked="" disabled="">
-              <div class="u-check-icon-font g-absolute-centered--y g-left-0 g-rounded-50x">
-                <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
+              <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" >
+              <div class="u-icon-v1 g-rounded-50x g-mr-5 g-mb-5">
+                <i class="icon-christmas-021 u-line-icon-pro"></i>
               </div>
               {{resource.name}}
             </label>

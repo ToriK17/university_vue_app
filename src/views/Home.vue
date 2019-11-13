@@ -116,12 +116,7 @@
               data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[30,30,30,30]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[30,30,30,30]" style="z-index: 18; white-space: nowrap; font-size: 14px; color: rgba(255, 255, 255, 1.00); border-color:rgba(0, 0, 0, 1.00);border-width:0px;border-radius:50px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">Colleges
               </div>
 
-              <!-- LAYER NR. 15 -->
-              <div class="tp-caption rev-scroll-btn revs-dark  rs-parallaxlevel-5" id="slide-3238-layer-13" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','50','50']"
-              data-width="35" data-height="55" data-whitespace="nowrap" data-type="button" data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]' data-basealign="slide" data-responsive_offset="on" data-responsive="off" data-frames='[{"from":"y:-50px;opacity:0;","speed":1500,"to":"o:1;","delay":800,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-              data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 19; min-width: 25px; max-width: 25px; max-width: 55px; max-width: 55px; white-space: nowrap; font-weight: 400;border-color:rgba(51, 51, 51, 1.00);border-style:solid;border-width:1px;border-radius:23px 23px 23px 23px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-                <span></span>
-              </div>
+              
             </li>
           </ul>
           <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
@@ -140,7 +135,7 @@
               <div class="d-inline-block g-width-30 g-height-2 g-bg-primary mb-2"></div>
               <p class="lead mb-0">Below are the schools that we are currently working with, if your school isn't here yet email us so we can help you find relevant nuggz. </p>
             </div>
-            <router-link to="/courses" class="btn btn-md u-btn-outline-black g-font-size-default text-uppercase g-rounded-50 g-py-12 g-px-30 mx-1 g-mb-20" href="#">University of Las Vegas</router-link>
+            <router-link to="/courses" class="btn btn-md u-btn-outline-black g-font-size-default text-uppercase g-rounded-50 g-py-12 g-px-30 mx-1 g-mb-20" >University of Las Vegas</router-link>
             <a class="btn btn-md u-btn-outline-black g-font-size-default text-uppercase g-rounded-50 g-py-12 g-px-30 mx-1 g-mb-20" href="#">Gonzaga University</a>
             <a class="btn btn-md u-btn-outline-black g-font-size-default text-uppercase g-rounded-50 g-py-12 g-px-30 mx-1 g-mb-20" href="#">Michigan State University</a>
             <a class="btn btn-md u-btn-outline-black g-font-size-default text-uppercase g-rounded-50 g-py-12 g-px-30 mx-1 g-mb-20" href="#">Auburn University</a>
