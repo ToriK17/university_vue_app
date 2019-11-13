@@ -1,14 +1,11 @@
 <template>
   <div class="courses-show">
-  <!-- Page Title -->
-  <section class="dzsparallaxer auto-init height-is-based-on-content use-loading" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
-    <!-- Parallax Image -->
-    <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-white-gradient-opacity-v3--after" style="height: 140%; background-image: url(https://t4.ftcdn.net/jpg/02/87/65/73/240_F_287657319_omxv5vSbJnJADySC2wX7X8LUo409HnVw.jpg);"></div>
-      <!-- End Parallax Image -->
+  
+  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-black-opacity-0_5--after g-color-white g-py-50 g-mb-20" style="background-image: url(https://t4.ftcdn.net/jpg/02/02/19/95/240_F_202199590_AeJO6ptZbeU583nenXWw1eByMmodFvDG.jpg);">    
 
     <div class="container text-center g-py-100--md g-py-80">
-      <h2 class="h1 text-uppercase g-font-weight-300 g-mb-30">{{ course.name }} : {{ course.num }}</h2>
-      <h2 class="h1 text-uppercase g-font-weight-300 g-mb-30">{{course.department}}</h2>
+      <h2 class="h1 text-uppercase g-font-weight-500 g-mb-30">{{ course.name }} : {{ course.num }}</h2>
+      <h2 class="h1 text-uppercase g-font-weight-500 g-mb-30">{{course.department}}</h2>
 
       <!-- Search Form -->
 
@@ -35,58 +32,52 @@
     </div>
   </section>   
 
-  <!-- <a > Block Level Button
-    <i class="fa fa-check-circle g-ml-3"></i>
-  </a> -->
 
 
-          <div class="container" v-for="post in course.posts">  
-            <article>
-              <header class="g-mb-15">
-                <h2 class="h4 g-mb-5">
-                    <router-link class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :to="`/posts/${post.id}`">{{post.professor_name}} for {{post.course_name}}</router-link>
-                </h2>
-                <span class="g-color-primary">https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream</span>
-              </header>
-              <div>  
-                <h4 class="h6 g-font-weight-700 g-mb-20">Listed Resources: </h4>
-                  <div class="row u-has-disabled-v1 g-mb-30">
-                    <div class="form-check g-mb-10 g-px-0">
-                      <p v-for="resource in post.post_resources" class="g-mb-15">
-                        <label class="u-check g-pl-25">  
-                          <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio" checked="" disabled="">
-                          <div class="u-check-icon-font g-absolute-centered--y g-left-0 g-rounded-50x">
-                            <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
-                          </div>
-                          {{resource.name}}
-                        </label>
-                      </p>
-                    </div>
-                  </div>
+
+<div class="container" v-for="post in course.posts">  
+<article>
+  <header class="g-mb-15">
+    <h2 class="h4 g-mb-5">
+        <router-link class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :to="`/posts/${post.id}`">{{post.professor_name}} for {{post.course_name}}</router-link>
+    </h2>
+    <span class="g-color-primary">https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream</span>
+  </header>
+  <div>  
+    <h4 class="h6 g-font-weight-700 g-mb-20">Listed Resources: </h4>
+      <div class="row u-has-disabled-v1 g-mb-30">
+        <div class="form-check g-mb-10 g-px-0">
+          <p v-for="resource in post.post_resources" class="g-mb-15">
+            <label class="u-check g-pl-25">  
+              <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroup2_1" type="radio" checked="" disabled="">
+              <div class="u-check-icon-font g-absolute-centered--y g-left-0 g-rounded-50x">
+                <i class="fa" data-check-icon="" data-uncheck-icon=""></i>
               </div>
-              
-                    
+              {{resource.name}}
+            </label>
+          </p>
+        </div>
+      </div>
+  </div>
 
+  <div class="d-lg-flex justify-content-between align-items-center">
+    <!-- Search Info -->
+    <ul class="list-inline g-mb-10 g-mb-0--lg">
+      <li class="list-inline-item g-mr-30">
+        <img class="g-height-25 g-width-25 rounded-circle g-mr-5" :src="post.user_image" alt="Profile Pic"> <a class="u-link-v5 g-color-main g-color-primary--hover">{{post.user_info}}</a>
+      </li>
 
-              <div class="d-lg-flex justify-content-between align-items-center">
-                <!-- Search Info -->
-                <ul class="list-inline g-mb-10 g-mb-0--lg">
-                  <li class="list-inline-item g-mr-30">
-                    <img class="g-height-25 g-width-25 rounded-circle g-mr-5" src="/assets/img-temp/100x100/img7.jpg" alt="Image Description"> <a class="u-link-v5 g-color-main g-color-primary--hover">{{post.user_info}}</a>
-                  </li>
-                  <li class="list-inline-item g-mr-30">
-                    <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> Posted: {{post.updated_at}}
-                  </li>
-                </ul>
-                <!-- End Search Info -->
-  
-              </div>
-            </article>
-            <!-- End Search Result -->
+      <li class="list-inline-item g-mr-30">
+        <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> Posted: {{post.updated_at}}
+      </li>
+    </ul>
+    <!-- End Search Info -->
 
-            <hr class="g-brd-gray-light-v4 g-my-40">
+  </div>
+</article>
 
-          </div>  
+  <hr class="g-brd-gray-light-v4 g-my-40">
+</div>  
             <!-- End Search Result -->
 
             <hr class="g-brd-gray-light-v4 g-my-40">
