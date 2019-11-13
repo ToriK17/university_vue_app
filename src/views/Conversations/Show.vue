@@ -51,14 +51,14 @@
               <!-- End Panel Header -->
 
               <!-- Panel Body -->
-              <div v-for="message in conversation.messages" class="card-block g-pa-0">
-                <div class="media g-mb-20">
+              <div class="card-block g-pa-0">
+                <div v-for="message in conversation.messages" class="media g-mb-20">
                   <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-20" :src= "message.image" alt="Missing Profile Image">
                   <div class="media-body g-brd-around g-brd-gray-light-v4 g-pa-20">
                     <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
                       <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5 g-mb-0--sm">{{ message.user_name }}</h5>
                       <div class="text-nowrap g-font-size-12">
-                        <span>{{message.created_at }}</span> / <a href="#">Reply</a>
+                        <span>{{message.created_at }}</span>
                       </div>
                     </div>
 
@@ -67,89 +67,29 @@
                   </div>
                 </div>
 
-                <div class="media g-ml-40 g-mb-20">
-                  <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="/assets/img-temp/100x100/img17.jpg" alt="Image Description">
-                  <div class="media-body g-brd-around g-brd-gray-light-v4 g-pa-20">
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
-                      <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5 g-mb-0--sm">Alberta Watson</h5>
-                      <div class="text-nowrap g-font-size-12">
-                        <span>7 hr ago</span> / <a href="#">Reply</a>
+                <div>
+                  <!-- Form -->
+                  <form v-on:submit.prevent="createMessage()" class="g-py-15">
+                    
+                    <div class="mb-4">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-primary"><i class="icon-communication-128 u-line-icon-pro g-pos-rel g-top-2"></i></span>
+                        </div>
+                        <input v-model="newMessageBody" class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-15" type="text" placeholder="type message">
                       </div>
                     </div>
 
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.</p>
-
-                    <ul class="list-inline g-mb-10 g-mb-20--md">
-                      <li class="list-inline-item g-mb-10 g-mb-0--sm">
-                        <img class="g-width-70 g-height-70" src="/assets/img-temp/100x100/img11.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item g-mb-10 g-mb-0--sm">
-                        <img class="g-width-70 g-height-70" src="/assets/img-temp/100x100/img12.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item g-mb-10 g-mb-0--sm">
-                        <img class="g-width-70 g-height-70" src="/assets/img-temp/100x100/img13.jpg" alt="Image Description">
-                      </li>
-                      <li class="list-inline-item u-bg-overlay g-bg-black-opacity-0_5--after">
-                        <img class="g-width-70 g-height-70" src="/assets/img-temp/100x100/img8.jpg" alt="Image Description">
-                        <a class="u-link-v5 u-bg-overlay__inner g-absolute-centered g-color-white g-color-primary--hover text-center" href="#">
-                          <span class="g-font-size-20">10+</span> Photos
-                        </a>
-                      </li>
-                    </ul>
-
-                    <ul class="list-inline my-0">
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                          <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i> 637
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                          <i class="icon-dislike g-pos-rel g-top-1 g-mr-3"></i> 08
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                          <i class="icon-share g-pos-rel g-top-1 g-mr-3"></i> 24
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="media g-mb-20">
-                  <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="/assets/img-temp/100x100/img6.jpg" alt="Image Description">
-                  <div class="media-body g-brd-around g-brd-gray-light-v4 g-pa-20">
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
-                      <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5 g-mb-0--sm">David Lee</h5>
-                      <div class="text-nowrap g-font-size-12">
-                        <span>2 days ago</span> / <a href="#">Reply</a>
-                      </div>
+                    <div class="g-mb-30">
+                      <input class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="submit" value="Create Message">
+                    
                     </div>
 
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.</p>
-
-                    <ul class="list-inline my-0">
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                          <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i> 178
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                          <i class="icon-dislike g-pos-rel g-top-1 g-mr-3"></i> 14
-                        </a>
-                      </li>
-                      <li class="list-inline-item g-mr-20">
-                        <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
-                          <i class="icon-share g-pos-rel g-top-1 g-mr-3"></i> 65
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                   
+                  </form>
+                  <!-- End Form -->
                 </div>
 
-                <a class="btn btn-block u-btn-primary rounded-0 g-py-13" href="#">Load More</a>
               </div>
               <!-- End Panel Body -->
             </div>
@@ -164,11 +104,6 @@
 
 
 
-
-
-
-
-   <h2>New Message</h2>
     <form v-on:submit.prevent="createMessage()">
       <div>
         <input type="text" v-model="newMessageBody"> 

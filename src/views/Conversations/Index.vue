@@ -24,30 +24,27 @@
 
         <!-- Search Result -->
         <article v-for="conversation in conversations">
-          <h2 class="h4 g-mb-15">
-            <img class="g-height-54 g-width-54 rounded-circle g-mr-5" :src="conversation.user.image" alt="Image Description">
-              <router-link class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" v-bind:to="'/conversations/' + conversation.id">{{conversation.user.user_name}}</router-link>
+          <router-link style="text-decoration: none; color: black" v-bind:to="'/conversations/' + conversation.id">
+            <h2 class="h4 g-mb-15">
+              <img class="g-height-54 g-width-54 rounded-circle g-mr-5" :src="conversation.user.image" alt="Image Description">
+              {{conversation.user.user_name}}
             </h2>
 
-          <div class="d-lg-flex justify-content-between align-items-center g-mb-15">
-            <!-- Search Info -->
-            <ul class="list-inline g-mb-10 g-mb-0--lg">
-              <li class="list-inline-item g-mr-30">
-                <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 2 weeks ago
-              </li>
-            </ul>
-            <!-- End Search Info -->
-          </div>
+            <div class="d-lg-flex justify-content-between align-items-center g-mb-15">
+              <!-- Search Info -->
+              <ul class="list-inline g-mb-10 g-mb-0--lg">
+                <li class="list-inline-item g-mr-30">
+                  <i class="icon-calendar g-pos-rel g-top-1 g-color-gray-dark-v5 g-mr-5"></i> 2 weeks ago
+                </li>
+              </ul>
+              <!-- End Search Info -->
+            </div>
 
-          <p class="g-mb-15">Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellusimp imperdiet molestie est volutpat at, sed viverra cursus nibh. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-            deleniti atque corrupti quos dolores.</p>
-        <hr class="g-brd-gray-light-v4 g-my-40">
+            <p class="g-mb-15">{{conversation.last_message.body}}</p>
+            <hr class="g-brd-gray-light-v4 g-my-40">
+          </router-link>
         </article>
         <!-- End Search Result -->
-
-        <hr class="g-brd-gray-light-v4 g-my-40">
-
-        <hr class="g-brd-gray-light-v4 g-my-40">
 
 
       </div>
@@ -89,6 +86,7 @@ export default {
   created: function() {
     axios.get("/api/conversations").then(response => {
       this.conversations = response.data;
+      console.log(this.conversations);
     });
     // var cable = ActionCable.createConsumer("ws://localhost:3000/cable");
     // cable.subscriptions.create("MessagesChannel", {
