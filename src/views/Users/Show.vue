@@ -7,7 +7,7 @@
         <div class="container">
           <ul class="u-list-inline">
             <li class="list-inline-item g-mr-7">
-              <router-link class="u-link-v5 g-color-main g-color-primary--hover" v-bind:to="`/users/${user.id}/edit`">Edit User Information</router-link>
+             
             </li>
             
           </ul>
@@ -32,9 +32,9 @@
             <!-- Figure Social Icons -->
             <ul class="list-inline text-center g-flex-middle-item--bottom g-mb-20">
               <li class="list-inline-item align-middle g-mx-7">
-                <a class="u-icon-v1 u-icon-size--md g-color-white" href="#">
+                <router-link class="u-icon-v1 u-icon-size--md g-color-white" v-bind:to="`/users/${user.id}/edit`">
                   <i class="icon-settings u-line-icon-pro"></i>
-                </a>
+                </router-link>
               </li>
             </ul>
             <!-- End Figure Social Icons -->

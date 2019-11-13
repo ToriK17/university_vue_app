@@ -52,59 +52,11 @@
                 </div>
               </div>
             </div>
+          
 
-              <!-- Button trigger modal -->
-              <div class="col-md-3 align-self-center text-md-right align-self-right">
-                <button v-if="$parent.userId() == post.user_id" class="align-self-right g-font-size-12 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover rounded btn btn-primary  text-md-right"  type="button" data-toggle="modal" data-target="#editModal">Edit</button>
-                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- Form -->
-                        <form class="g-py-15">
-                          
-                          <div class="form-group row g-mb-25">
-                            <label for="example-text-input" class="col-2 col-form-label" >Professor</label>
-                              <div class="col-10">
-                                <input v-model="post.professor_name" class="form-control rounded-0 form-control-md" type="text" placeholder="enter professor name" id="example-text-input">
-                              </div>
-                          </div>
-                          
-                          <div class="form-group g-mb-25">
-                            <label for="exampleTextarea">Optional Extra Details</label>
-                            <textarea v-model="post.details" class="form-control rounded-0 form-control-md" id="exampleTextarea" rows="6"></textarea>
-                          </div>
-
-                          <legend class="g-font-size-default">Select the Knuggs you have</legend>
-                          <div v-for="resource in resources" class="mb-3">
-                            <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-13 g-pl-25 mb-2">
-                              <input v-bind:id="resource.id" v-bind:value="resource" v-model="post.post_resources" class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0" type="checkbox">          
-                              {{resource.name}}
-                            </label>
-                            <div class="g-mb-20">
-                              <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 rounded g-py-15 g-px-15" type="text" placeholder="details" v-model="resource.details">
-                            </div>
-                          </div>
-
-                          <button v-on:click="updatePost()" class="btn btn-block u-btn-primary rounded g-py-13" type="button">Update Post</button>
-                        </form>
-                        <!-- End Form -->
-                        <button v-on:click="destroyPost()" class="btn btn-block u-btn-warning rounded g-py-13" type="button">Destroy Post</button>
-                    </div>
-                  </div>  
-              </div>
-            </div>
-          </div>  
+              
             <!-- End Content Header -->
-
-            <hr class="g-brd-gray-light-v4">
-
+          
 
             <hr class="g-brd-gray-light-v4">
 
@@ -154,6 +106,7 @@
         <!-- Sidebar -->
         <div class="col-lg-4">
           <aside class="u-shadow-v11 rounded g-pa-30">
+
             <!-- Content Header -->
             <div class="media g-mb-20">
               <div class="d-flex align-self-center g-mt-3 g-mr-15">
@@ -224,8 +177,57 @@
             <!-- End Save or Print  -->
 
             <hr class="g-brd-gray-light-v4">
+            
+           
+           <!-- Button trigger modal --> 
+              <button v-if="$parent.userId() == post.user_id" class="btn btn-xl btn-block u-btn-primary text-uppercase g-font-weight-600 g-font-size-12"  type="button" data-toggle="modal" data-target="#editModal">Edit</button>
+              <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Form -->
+                      <form class="g-py-15">
+                        
+                        <div class="form-group row g-mb-25">
+                          <label for="example-text-input" class="col-2 col-form-label" >Professor</label>
+                            <div class="col-10">
+                              <input v-model="post.professor_name" class="form-control rounded-0 form-control-md" type="text" placeholder="enter professor name" id="example-text-input">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group g-mb-25">
+                          <label for="exampleTextarea">Optional Extra Details</label>
+                          <textarea v-model="post.details" class="form-control rounded-0 form-control-md" id="exampleTextarea" rows="6"></textarea>
+                        </div>
 
-            <a v-on:click="createConversation()" class="btn btn-xl btn-block u-btn-primary text-uppercase g-font-weight-600 g-font-size-12" href="#">Contact Me</a>
+                        <legend class="g-font-size-default">Select the Knuggs you have</legend>
+                        <div v-for="resource in resources" class="mb-3">
+                          <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-13 g-pl-25 mb-2">
+                            <input v-bind:id="resource.id" v-bind:value="resource" v-model="post.post_resources" class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0" type="checkbox">          
+                            {{resource.name}}
+                          </label>
+                          <div class="g-mb-20">
+                            <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 rounded g-py-15 g-px-15" type="text" placeholder="details" v-model="resource.details">
+                          </div>
+                        </div>
+
+                        <button v-on:click="updatePost()" class="btn btn-block u-btn-primary rounded g-py-13" type="button">Update Post</button>
+                      </form>
+                      <!-- End Form -->
+                      <button v-on:click="destroyPost()" class="btn btn-block u-btn-warning rounded g-py-13" type="button">Destroy Post</button>
+                  </div>
+                </div>  
+            </div>
+            </div>
+            
+              
+            <a v-if="$parent.userId() != post.user_id" v-on:click="createConversation()" class="btn btn-xl btn-block u-btn-primary text-uppercase g-font-weight-600 g-font-size-12" href="#">Contact Me</a>
           </aside>
         </div>
         <!-- Sidebar -->

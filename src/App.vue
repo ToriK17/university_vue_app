@@ -69,7 +69,7 @@
                 <!-- Messages -->
                 <!-- add v-if="isLoggedIn()" -->
                 <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <router-link v-if="isLoggedIn()" to="/" class="nav-link">Messages</router-link>
+                  <router-link v-if="isLoggedIn()" to="/conversations" class="nav-link">Messages</router-link>
                 </li>
                 <!-- End Messages -->
 

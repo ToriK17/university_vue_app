@@ -1,11 +1,14 @@
   <template>
     <div class="announcements">
       <template>
+        <div class="container">
         <twitter>
           <a class="twitter-timeline" href="https://twitter.com/unlv?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets from your college</a>
         </twitter>
+      </div>  
       </template>
     </div>
+
   </template>
 
 <script>

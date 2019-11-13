@@ -28,7 +28,7 @@
 
   <section>
     <div class="btn btn-med btn-block  g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 ">
-      <router-link :to="`/courses/${course.id}/posts/new`" class="btn u-btn-outline-black g-font-weight-600 g-font-size-13 text-uppercase g-py-10 g-px-15" target="_blank">Post a Knugget</router-link>
+      <router-link :to="`/courses/${course.id}/posts/new`" class="btn u-btn-outline-black g-font-weight-600 g-font-size-13 text-uppercase g-py-10 g-px-15" target="_blank">Post you own Knugget</router-link>
     </div>
   </section>   
 
@@ -39,12 +39,12 @@
 <article>
   <header class="g-mb-15">
     <h2 class="h4 g-mb-5">
-        <router-link class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :to="`/posts/${post.id}`">{{post.professor_name}} for {{post.course_name}}</router-link>
+        <router-link class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :to="`/posts/${post.id}`"> {{post.course_name}} with {{post.professor_name}} </router-link>
     </h2>
     
   </header>
   <div>  
-    <h4 class="h6 g-font-weight-700 g-mb-20">Listed Resources: </h4>
+    <h4 class="h5 g-color-gray-dark-v1 g-mb-20">Currently Offering: </h4>
       <div class="row u-has-disabled-v1 g-mb-30">
         <div class="form-check g-mb-10 g-px-0">
           <p v-for="resource in post.post_resources" class="g-mb-15">
@@ -72,11 +72,27 @@
       </li>
     </ul>
     <!-- End Search Info -->
-
+    <!-- Share, Print and More -->
+    <ul class="list-inline mb-0">
+      
+      
+      <li class="list-inline-item">
+        <div class="dropdown g-mb-10 g-mb-0--md">
+          <router-link :to="`/posts/${post.id}`" class="btn btn-md u-btn-primary u-btn-hover-v1-4 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15">
+            <i class="fa  g-mr-3"></i>
+            More Details
+          </router-link>
+           
+          </div>
+        
+      </li>
+    </ul>
+    <!-- End Share, Print and More -->
+  </div>
+  <div class="u-divider u-divider-solid u-divider-center g-brd-gray-light-v3 g-my-80">
+    <i class="fa fa-circle u-divider__icon g-bg-white g-color-gray-light-v3"></i>
   </div>
 </article>
-
-  <hr class="g-brd-gray-light-v4 g-my-40">
 </div>  
             <!-- End Search Result -->
 
@@ -123,30 +139,9 @@
             </nav>
             <!-- End Pagination -->
 
-            <h3 class="h5 g-color-gray-dark-v1 g-mb-20">Searches Related to Unify Template</h3>
+            
 
-            <!-- Tags -->
-            <ul class="u-list-inline g-width-60x--md mb-0">
-              <li class="list-inline-item g-mb-10">
-                <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover rounded g-py-4 g-px-10" href="#">Wrapbootstrap</a>
-              </li>
-              <li class="list-inline-item g-mb-10">
-                <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover rounded g-py-4 g-px-10" href="#">Web Design</a>
-              </li>
-              <li class="list-inline-item g-mb-10">
-                <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover rounded g-py-4 g-px-10" href="#">Best Responsive Bootstrap Template</a>
-              </li>
-              <li class="list-inline-item g-mb-10">
-                <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover rounded g-py-4 g-px-10" href="#">Thematic Pages</a>
-              </li>
-              <li class="list-inline-item g-mb-10">
-                <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover rounded g-py-4 g-px-10" href="#">Corporate &amp; Business Template</a>
-              </li>
-              <li class="list-inline-item g-mb-10">
-                <a class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover rounded g-py-4 g-px-10" href="#">SASS</a>
-              </li>
-            </ul>
-            <!-- End Tags -->
+            
           </div>
         </section>
       </div>
