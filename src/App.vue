@@ -17,7 +17,7 @@
 
             <!-- Logo -->
             <a href="/" class="navbar-brand">
-              <img width="50px" height="50px" src="/assets/img/logo/orange_nugget.jpg"/>
+              <img width="50px" height="50px" src="/assets/img/logo/cute_nugg.png"/>
             </a>
             <!-- <li class="nav-logo-item g-mx-40--lg">
               <router-link to="/" class="navbar-brand">

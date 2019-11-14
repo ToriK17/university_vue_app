@@ -1,7 +1,7 @@
 <template>
   <div class="courses-show">
   
-  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-black-opacity-0_5--after g-color-white g-py-50 g-mb-20" style="background-image: url(https://t4.ftcdn.net/jpg/02/02/19/95/240_F_202199590_AeJO6ptZbeU583nenXWw1eByMmodFvDG.jpg);">    
+  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-color-white g-py-50 g-mb-20" style="background-image: url(/assets/img/bg/green_yellow_background.jpeg);">    
 
     <div class="container text-center g-py-100--md g-py-80">
       <h2 class="h1 text-uppercase g-font-weight-500 g-mb-30">{{ course.name }} : {{ course.num }}</h2>

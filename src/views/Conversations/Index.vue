@@ -1,10 +1,10 @@
 <template>
  <div class="conversations-index">
    
-    <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-black-opacity-0_5--after g-color-white g-py-50 g-mb-20" style="background-image: url(https://t4.ftcdn.net/jpg/02/02/19/95/240_F_202199590_AeJO6ptZbeU583nenXWw1eByMmodFvDG.jpg);">
+    <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-color-white g-py-50 g-mb-20" style="background-image: url(/assets/img/logo/messages.jpeg);">
 
       <div class="container text-center g-py-100--md g-py-80">
-        <h2 class="h1 text-uppercase g-font-weight-500 g-mb-30">My Messages</h2>
+        <h1 class="text-uppercase g-font-weight-500 g-mb-30"></h1>
        </div>
     </section>
 
@@ -26,7 +26,7 @@
         <article v-for="conversation in conversations">
           <router-link style="text-decoration: none; color: black" v-bind:to="'/conversations/' + conversation.id">
             <h2 class="h4 g-mb-15">
-              <img class="g-height-54 g-width-54 rounded-circle g-mr-5" :src="conversation.user.image" alt="Image Description">
+              <img class="g-height-54 g-width-54 rounded-circle g-mr-5" :src="conversation.user.image" alt="Profile Image">
               {{conversation.user.user_name}}
             </h2>
 

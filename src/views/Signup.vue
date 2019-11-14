@@ -18,14 +18,14 @@
             <form v-on:submit.prevent="submit()" class="g-py-15">
               <h2 class="h3 g-color-black mb-4">Signup</h2>
               <ul>
-                <li class="text-danger" v-for="error in errors">{{ error }}</li>
+                <!-- <li class="text-danger" v-for="error in errors">{{ error }}</li> -->
               </ul>
               <div class="mb-4">
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-primary"><i class="icon-communication-128 u-line-icon-pro g-pos-rel g-top-2"></i></span>
                   </div>
-                  <input v-model="userName" class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-15" type="email" placeholder="Username">
+                  <input v-model="userName" class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-15" type="text" placeholder="Username">
                 </div>
               </div>
 
@@ -53,7 +53,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-primary"><i class="icon-media-094 u-line-icon-pro g-pos-rel g-top-2"></i></span>
                   </div>
-                  <input v-model="password_confirmation" class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-15" type="tel" placeholder="Password">
+                  <input v-model="passwordConfirmation" class="form-control g-color-black g-brd-left-none g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-15" type="password" placeholder="Password Confirmation">
                 </div>
               </div>
 
@@ -85,10 +85,10 @@
               </div>
 
               <div class="g-mb-30">
-                <button class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="button">Signup</button>
+                <button class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="submit" value="Submit" >Signup</button>
               </div>
 
-              <p class="g-font-size-13 text-center mb-0">Already have an account? <a class="g-font-weight-600" href="page-signup-11.html">Login</a>
+              <p class="g-font-size-13 text-center mb-0">Already have an account? <a class="g-font-weight-600" to="/login">Login</a>
               </p>
             </form>
             <!-- End Form -->
@@ -101,7 +101,7 @@
 
 
 
-      <form v-on:submit.prevent="submit()"  >
+      <!-- <form v-on:submit.prevent="submit()"  >
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
@@ -126,8 +126,8 @@
           <input type="password" class="form-control" v-model="passwordConfirmation">
         </div>
         <input type="submit" class="btn btn-primary" value="Submit">
-      </form>
-    </div>
+      </form> -->
+    
   </div>
 </template>
 

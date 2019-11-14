@@ -1,7 +1,7 @@
 <template>
   <div class="courses-index">
     
-  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-bg-black-opacity-0_5--after g-color-white g-py-50 g-mb-20" style="background-image: url(https://t4.ftcdn.net/jpg/02/02/19/95/240_F_202199590_AeJO6ptZbeU583nenXWw1eByMmodFvDG.jpg);">
+  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-color-white g-py-50 g-mb-20" style="background-image: url(https://t4.ftcdn.net/jpg/02/02/19/95/240_F_202199590_AeJO6ptZbeU583nenXWw1eByMmodFvDG.jpg);">
 
     <div class="container text-center g-py-100--md g-py-80">
       <h2 class="h1 text-uppercase g-font-weight-500 g-mb-30">Courses for University Of Nevada, Las Vegas</h2>
@@ -18,7 +18,7 @@
               </button>
             </div>
           </div>
-          <small class="form-text g-opacity-0_8 g-font-size-default g-font-weight-700">No need for a crystal ball when you have knugget!</small>
+          <h4 class="form-text g-font-weight-700">No need for a crystal ball when you have knuggets</h4>
         </div>
       </form>
     <!-- End Search Form -->
@@ -33,7 +33,7 @@
     <div class="container">
       <!-- num of Search Results -->
       <div class="d-md-flex justify-content-between g-mb-30">
-        <h3 class="h6 text-uppercase g-mb-10 g-mb--lg">About <span class="g-color-gray-dark-v1">384,907</span> results</h3>
+        <h3 class="h6 text-uppercase g-mb-10 g-mb--lg"> <span class="g-color-gray-dark-v1"></span> results</h3>
         
       </div>
       <!-- End num of search Results-->

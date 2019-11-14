@@ -227,7 +227,7 @@
             </div>
             
               
-            <a v-if="$parent.userId() != post.user_id" v-on:click="createConversation()" class="btn btn-xl btn-block u-btn-primary text-uppercase g-font-weight-600 g-font-size-12" href="#">Contact Me</a>
+            <a v-if="$parent.userId() != post.user_id" v-on:click="createConversation()" class="btn btn-xl btn-block u-btn-primary text-uppercase g-font-weight-600 g-font-size-12"  type="button" >Contact Me</a>
           </aside>
         </div>
         <!-- Sidebar -->

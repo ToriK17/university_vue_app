@@ -19,12 +19,6 @@
                   </div>
               </div>
 
-              <div class="form-group row g-mb-25">
-                <label for="example-text-input" class="col-2 col-form-label" >Course</label>
-                  <div class="col-10">
-                    <input class="form-control rounded-0 form-control-md" type="text" v-model="course.name" id="example-text-input"> 
-                  </div>
-              </div>
               
               <div class="form-group g-mb-25">
                 <label for="exampleTextarea">Optional Extra Details</label>

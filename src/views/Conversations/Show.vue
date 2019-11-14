@@ -6,10 +6,12 @@
           <!-- Profile Sidebar -->
           <div class="col-lg-3 g-mb-50 g-mb-0--lg">
             <!-- User Image -->
-            <div class="u-block-hover g-pos-rel">
+            <div class="g-pos-rel">
               <figure>
-                <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="/assets/img-temp/400x450/img5.jpg" alt="Image Description">
-              </figure>  <!-- :src="user.image" -->
+                
+                <img class="u-shadow-v1-5 g-line-height-2  g-mb-30 img-fluid w-100 u-block-hover__main--zoom-v1" src="/assets/img/bg/crispy_nugg.jpeg" alt="Image Description">
+                
+              </figure>  
 
               <!-- Figure Caption -->
               <figcaption class="u-block-hover__additional--fade g-bg-black-opacity-0_5 g-pa-30">
@@ -45,7 +47,8 @@
               <!-- Panel Header -->
               <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
                 <h3 class="h6 mb-0">
-                    <i class="icon-bubbles g-pos-rel g-top-1 g-mr-5"></i> Messages with 
+                    <i class="icon-bubbles g-pos-rel g-top-1 g-mr-5"></i> 
+                    <span>Private Messaging</span>
                   </h3>
               </div>
               <!-- End Panel Header -->
@@ -58,7 +61,7 @@
                     <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
                       <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5 g-mb-0--sm">{{ message.user_name }}</h5>
                       <div class="text-nowrap g-font-size-12">
-                        <span>{{message.created_at }}</span>
+                        <span>{{relativeDate(message.created_at) }}</span>
                       </div>
                     </div>
 
@@ -104,28 +107,29 @@
 
 
 
-    <form v-on:submit.prevent="createMessage()">
+   <!--    <form v-on:submit.prevent="createMessage()">
+        <div>
+          <input type="text" v-model="newMessageBody"> 
+          <input type="submit" value="Create Message"> 
+        </div>    
+      </form> 
       <div>
-        <input type="text" v-model="newMessageBody"> 
-        <input type="submit" value="Create Message"> 
-      </div>    
-    </form> 
-    <div>
-      <h2>Messages</h2>
-      <div v-for="message in conversation.messages">
-        <p>{{ message.user_name }} : {{message.created_at }}</p>
-        <p>{{ message.body }}</p>
+        <h2>Messages</h2>
+        <div v-for="message in conversation.messages">
+          <p>{{ message.user_name }} : {{message.created_at }}</p>
+          <p>{{ message.body }}</p>
+        </div>
       </div>
-    </div>
 
-    <router-link to="/conversations">return to all messages</router-link> 
-      
+      <router-link to="/conversations">return to all messages</router-link> 
+    -->     
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import ActionCable from "actioncable";
+import moment from 'moment';
 
 export default {
   data: function() {
@@ -166,6 +170,9 @@ export default {
         this.newMessageBody = "";
         // this.conversation.messages.push(response.data);
       });      
+    },
+    relativeDate: function(date) {
+      return moment(date).format('MMMM Do YYYY, h:mm a');
     }
   }
 };
