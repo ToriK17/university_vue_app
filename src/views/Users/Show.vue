@@ -108,7 +108,7 @@
                       <h5 class="h6 g-font-weight-600 g-color-black">{{ post.course_name}} with {{ post.professor_name }}</h5>
                       <span class="small text-nowrap g-color-blue">{{relativeDate(post.created_at)}}</span>
                     </div>
-                    <p> Additional Details:<br> {{ post.details }}</p>
+                    <p class="small text-nowrap g-color-blue"> Additional Details:<br> {{ post.details }}</p>
                     
                   </div>
                 </li>
