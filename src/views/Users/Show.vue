@@ -96,7 +96,7 @@
             <!-- End Panel Header -->
             <!-- Post Panel Body -->
 
-            <div v-for="post in user.posts" class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-170 g-pa-0">
+            <div v-for="post in user.posts" class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-120 g-pa-0">
               <router-link v-bind:to="`/posts/${post.id}`">
               <ul class="list-unstyled">
                 <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-blue-left rounded g-pa-20 g-mb-10">
