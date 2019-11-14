@@ -1,29 +1,29 @@
 <template>
   <div class="courses-index">
     
-  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-color-white g-py-50 g-mb-20" style="background-image: url(https://t4.ftcdn.net/jpg/02/02/19/95/240_F_202199590_AeJO6ptZbeU583nenXWw1eByMmodFvDG.jpg);">
+  <div class="g-bg-size-cover g-bg-pos-center  g-color-white g-py-50 g-mb-20" style="background-image: url(/assets/img/bg/yellow_books_2.jpeg);">
 
     <div class="container text-center g-py-100--md g-py-80">
       <h2 class="h1 text-uppercase g-font-weight-500 g-mb-30">Courses for University Of Nevada, Las Vegas</h2>
 
     <!-- Search Form -->
-
+  
       <form class="g-width-60x--md mx-auto">
         <div class="form-group g-mb-20">
           <div class="input-group u-shadow-v21 rounded g-mb-15">
-            <input v-model="courseFilter" class="form-control form-control-md g-brd-white g-font-size-16 border-right-0 pr-0 g-py-15" type="text" placeholder="Search for your Course">
+            <input class="form-control form-control-md g-brd-white g-font-size-16 border-right-0 pr-0 g-py-15"  v-model="courseFilter" type="text"  placeholder="Search for your Course">
             <div class="input-group-addon d-flex align-items-center g-bg-white g-brd-white g-color-gray-light-v1 g-pa-2">
               <button class="btn u-btn-primary g-font-size-16 g-py-15 g-px-20" type="submit">
-              <i class="icon-magnifier g-pos-rel g-top-1"></i>
+                <i class="icon-magnifier g-pos-rel g-top-1"></i>
               </button>
             </div>
           </div>
-          <h4 class="form-text g-font-weight-700">No need for a crystal ball when you have knuggets</h4>
+          <h4 class="form-text g-font-weight-500">No need for a crystal ball when you have knuggets</h4>
         </div>
       </form>
     <!-- End Search Form -->
     </div>
-  </section>
+  </div>
 
       <!-- <router-link v-bind:to="`/courses/${course.id}`">Posts for this Course</router-link> 
         </div>
@@ -193,10 +193,10 @@
 
 
       <!-- <h1>Courses for University Of Nevada, Las Vegas </h1> -->
-      <!-- Search: <input type="text" v-model="courseFilter">   --> 
+      <!-- Search: <input type="text" v-model="courseFilter">   
   
 
-      <!-- <div v-for="course in filterBy(courses, courseFilter)">
+      <div v-for="course in filterBy(courses, courseFilter)">
         <p>Course Name: {{ course.name }}</p>
         <p>Department: {{ course.department }}</p>
         <p>Course Number: {{ course.num }}</p>
@@ -205,7 +205,7 @@
         </div>
       </div> -->
     </div>
-  </div>  
+   
 </template>
 
 <script>

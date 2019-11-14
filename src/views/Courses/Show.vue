@@ -1,7 +1,7 @@
 <template>
   <div class="courses-show">
   
-  <section class="g-bg-size-cover g-bg-pos-center g-bg-cover g-color-white g-py-50 g-mb-20" style="background-image: url(/assets/img/bg/green_yellow_background.jpeg);">    
+  <section class="g-bg-size-cover g-bg-pos-center  g-color-white g-py-50 g-mb-20" style="background-image: url(/assets/img/bg/blackboard.jpeg);">    
 
     <div class="container text-center g-py-100--md g-py-80">
       <h2 class="h1 text-uppercase g-font-weight-500 g-mb-30">{{ course.name }} : {{ course.num }}</h2>
@@ -21,19 +21,21 @@
           </div>
           <small class="form-text g-opacity-0_8 g-font-size-default"></small>
         </div>
+
+        <section>
+          <div class="btn btn-med btn-block  g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 ">
+            <router-link :to="`/courses/${course.id}/posts/new`" class="btn btn-md u-btn-primary u-btn-hover-v1-4 g-font-weight-600 g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 g-mb-15" target="_blank">Post your own Knugget</router-link>
+          </div>
+        </section>  
       </form>
       <!-- End Search Form -->
     </div>
   </section>
 
-  <section>
-    <div class="btn btn-med btn-block  g-letter-spacing-0_5 text-uppercase g-brd-2 g-rounded-50 g-mr-10 ">
-      <router-link :to="`/courses/${course.id}/posts/new`" class="btn u-btn-outline-black g-font-weight-600 g-font-size-13 text-uppercase g-py-10 g-px-15" target="_blank">Post you own Knugget</router-link>
-    </div>
-  </section>   
+   
 
 
-
+  <!-- individual listed items -->
 
 <div class="container" v-for="post in course.posts">  
 <article>
@@ -45,7 +47,7 @@
   </header>
   <div>  
     <h4 class="h5 g-color-gray-dark-v1 g-mb-20">Currently Offering: </h4>
-      <div class="row u-has-disabled-v1 g-mb-30">
+      <div class="row u-has-disabled-v1 g-mb-20">
         <div class="form-check g-mb-10 g-px-0">
           <p v-for="resource in post.post_resources" class="g-mb-15">
             <label class="u-check g-pl-25">  
@@ -64,7 +66,7 @@
     <!-- Search Info -->
     <ul class="list-inline g-mb-10 g-mb-0--lg">
       <li class="list-inline-item g-mr-30">
-        <img class="g-height-25 g-width-25 rounded-circle g-mr-5" :src="post.user_image" alt="Profile Pic"> <a class="u-link-v5 g-color-main g-color-primary--hover">{{post.user_info}}</a>
+        <img class="g-height-30 g-width-30 rounded-circle g-mr-5" :src="post.user_image" alt="Profile Pic"> <a class="u-link-v5 g-color-main">{{post.user_info}}</a>
       </li>
 
       <li class="list-inline-item g-mr-30">

@@ -9,7 +9,7 @@
             <div class="g-pos-rel">
               <figure>
                 
-                <img class="g-line-height-2  g-mb-30 img-fluid w-100 u-block-hover__main--zoom-v1" src="/assets/img/bg/invisi_dog_nugg.png" alt="Image Description">
+                <img class="g-line-height-2  g-mb-30 img-fluid w-100 u-block-hover__main--zoom-v1" src="/assets/img/bg/phone_doggo.png" alt="Image Description">
                 
               </figure>  
 

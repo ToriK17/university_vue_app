@@ -6,7 +6,7 @@
         <div class="col-lg-6">
           <!-- Promo Block - Slider -->
           <div class="js-carousel h-100" data-autoplay="true" data-infinite="true" data-fade="true" data-speed="5000">
-            <div class="g-bg-img-hero h-100 g-min-height-50vh" style="background-image: url(/assets/img/logo/cute_nugg.png);" data-calc-target="#js-header"></div>
+            <div class="g-bg-img-hero h-100 g-min-height-50vh" style="background-image: url(/assets/img/bg/selfie_doggo_2.png);" data-calc-target="#js-header"></div>
 
           </div>
           <!-- End Promo Block - Slider -->
@@ -16,7 +16,7 @@
           <div class="g-pa-40 g-mx-70--xl">
             <!-- Form -->
             <form v-on:submit.prevent="submit()" class="g-py-15">
-              <h2 class="h3 g-color-black mb-4">Edit Profile</h2>
+              <h2 class="h3 g-color-black mb-4">Update Your Profile</h2>
               <ul>
                 <!-- <li class="text-danger" v-for="error in errors">{{ error }}</li> -->
               </ul>
