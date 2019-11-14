@@ -4,10 +4,10 @@
       <div class="row no-gutters">
         <div class="col-lg-6">
           <!-- Promo Block - Slider -->
-          <div class="js-carousel h-100" data-autoplay="true" data-infinite="true" data-fade="true" data-speed="5000">
-            <div class="js-slide g-bg-img-hero h-100 g-min-height-50vh" style="background-image: url(../../assets/img-temp/900x900/img3.jpg);" data-calc-target="#js-header"></div>
+          <div >
+            <div class="g-bg-img-hero h-100 g-min-height-50vh" style="background-image: url(/assets/img/bg/invisi_dog_nugg.png);" data-calc-target="#js-header"></div>
 
-            <div class="js-slide g-bg-img-hero h-100 g-min-height-50vh" style="background-image: url(../../assets/img-temp/900x900/img4.jpg);" data-calc-target="#js-header"></div>
+            
           </div>
           <!-- End Promo Block - Slider -->
         </div>
@@ -88,7 +88,7 @@
                 <button class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="submit" value="Submit" >Signup</button>
               </div>
 
-              <p class="g-font-size-13 text-center mb-0">Already have an account? <a class="g-font-weight-600" to="/login">Login</a>
+              <p class="g-font-size-13 text-center mb-0">Already have an account? <router-link class="g-font-weight-600" to="/login">Login</router-link>
               </p>
             </form>
             <!-- End Form -->
