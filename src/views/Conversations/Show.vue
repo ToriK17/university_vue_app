@@ -9,7 +9,7 @@
             <div class="g-pos-rel">
               <figure>
                 
-                <img class="u-shadow-v1-5 g-line-height-2  g-mb-30 img-fluid w-100 u-block-hover__main--zoom-v1" src="/assets/img/bg/crispy_nugg.jpeg" alt="Image Description">
+                <img class="g-line-height-2  g-mb-30 img-fluid w-100 u-block-hover__main--zoom-v1" src="/assets/img/bg/invisi_dog_nugg.png" alt="Image Description">
                 
               </figure>  
 
@@ -172,7 +172,7 @@ export default {
       });      
     },
     relativeDate: function(date) {
-      return moment(date).format('MMMM Do YYYY, h:mm a');
+      return moment(date).format('MMMM Do, h:mm a');
     }
   }
 };

@@ -47,15 +47,15 @@
         <div class="col-lg-7 flex-lg-first g-mb-80">
           <div class="g-pr-20--lg">
             <div class="mb-5">
-              <h2 class="h1 g-font-weight-300 mb-3">Share knowledge -placeholder</h2>
-              <p class="g-color-gray-dark-v5">The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+              <h2 class="h1 g-font-weight-300 mb-3">After you finished your class. . . </h2>
+              <p class="g-color-gray-dark-v5">Don't let your textbooks, quizzes, exams, and more go to waste. Here you can sell these valuable resources to future students. Even just meeting up for coffee and sharing your experiences or knowledge nuggets can help another student better prepare for a difficult course ahead. </p>
             </div>
 
             
 
             <div class="text-center">
-              <h2 class="h4 mb-4">Join more than <span class="g-color-primary">13,000</span> members worldwide</h2>
-              <img class="img-fluid" src="/assets/img/maps/map1.png" alt="Image Description">
+              <h2 class="h4 mb-4">Instantly Connect with students<span class="g-color-primary"> who need course supplies </span> you already have</h2>
+              <img class="img-fluid" src="/assets/img/bg/right_doggo_2.png" alt="Pupper">
             </div>
           </div>
         </div>

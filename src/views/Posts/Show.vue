@@ -39,7 +39,7 @@
               <div class="col-md-9 g-mb-30 g-mb-0--md">
                 <div class="media">
                   <div class="d-flex align-self-center g-mt-3 g-mr-20">
-                    <img class="g-width-40 g-height-40" :src="user.image" alt="Profile Pic">
+                    <img class="g-width-40 g-height-40" :src="post.user_image" alt="Profile Pic">
                   </div>
                   <div class="media-body">
                     <span class="d-block g-mb-3">

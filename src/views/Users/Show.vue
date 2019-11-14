@@ -64,7 +64,7 @@
           <!-- End Email -->
 
           <!-- My Messages -->
-          <a href="page-profile-comments-1.html" class="list-group-item list-group-item-action justify-content-between">
+          <a to="/conversations" class="list-group-item list-group-item-action justify-content-between">
             <span><i class="icon-bubbles g-pos-rel g-top-1 g-mr-8"></i> My Messages</span>
             <span class="u-label g-font-size-11 g-bg-pink g-rounded-20 g-px-8">2</span>
           </a>
@@ -104,12 +104,10 @@
                   <div class="media-body">
                     <div class="d-flex justify-content-between">
                       <h5 class="h6 g-font-weight-600 g-color-black">{{ post.course_name}} with {{ post.professor_name }}</h5>
-                      <span class="small text-nowrap g-color-blue">2 min ago</span>
+                      <span class="small text-nowrap g-color-blue">{{relativeDate(post.created_at)}}</span>
                     </div>
                     <p> Additional Details:<br> {{ post.details }}</p>
-                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">HTML</span>
-                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">AnhularJS</span>
-                    <span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">PHP</span>
+                    
                   </div>
                 </li>
               </ul>
@@ -126,29 +124,6 @@
     </div>
   </div>
 </template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -183,6 +158,7 @@
 
 <script>
 import axios from "axios";
+import moment from 'moment';
 export default {
   data: function() {
     return {
@@ -195,6 +171,10 @@ export default {
       console.log(this.user);
     });
   },
-  methods: {}
+  methods: {
+    relativeDate: function(date) {
+      return moment(date).format('MMMM Do YYYY, h:mm a');
+    }
+  }
 };
 </script>
