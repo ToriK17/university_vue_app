@@ -96,6 +96,7 @@
             <!-- End Panel Header -->
             <!-- Post Panel Body -->
             <div v-for="post in user.posts" class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-170 g-pa-0">
+              <router-link v-bind:to="`/posts/${post.id}`">
               <ul class="list-unstyled">
                 <li class="media g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-blue-left rounded g-pa-20 g-mb-10">
                   <div class="d-flex g-mt-2 g-mr-15">
@@ -106,11 +107,12 @@
                       <h5 class="h6 g-font-weight-600 g-color-black">{{ post.course_name}} with {{ post.professor_name }}</h5>
                       <span class="small text-nowrap g-color-blue">{{relativeDate(post.created_at)}}</span>
                     </div>
-                    <p> Additional Details:<br> {{ post.details }}</p>
+                    <p class="small text-nowrap g-color-blue"> Additional Details:<br> {{ post.details }}</p>
                     
                   </div>
                 </li>
               </ul>
+            </router-link>
             </div>
             <!-- End Panel Body -->
           </div>
