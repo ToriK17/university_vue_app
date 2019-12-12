@@ -170,7 +170,7 @@
               </li>
               <li>
                 <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                  <i class="icon-printer g-color-gray-dark-v5 g-pos-rel g-top-1 g-mr-5"></i> Print Job
+                  <i class="icon-printer g-color-gray-dark-v5 g-pos-rel g-top-1 g-mr-5"></i> Print 
                 </a>
               </li>
             </ul>

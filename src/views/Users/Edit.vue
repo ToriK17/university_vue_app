@@ -155,7 +155,6 @@ export default {
       if (this.image) {
         formData.append("image", this.image);
       }
-
       axios
         .patch("/api/users/" + this.user.id, formData)
         .then(response => {
